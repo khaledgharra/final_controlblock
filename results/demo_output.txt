@@ -1,0 +1,40 @@
+
+---- PROGRAM word line 5 (00101), then word line 9 (01001) ----
+clk  | Mode | S_Ain_c | flags             | WL_S     | BL_S             | LB_en    | note
+   1 | 001  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | IDLE -> SHIFT_PROG (no bit taken)
+   2 | 001  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | WL 5: bit 1 of 5
+   3 | 001  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | WL 5: bit 2 of 5
+   4 | 001  |   1    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | WL 5: bit 3 of 5
+   5 | 001  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | WL 5: bit 4 of 5
+   6 | 001  |   1    | WL_En=1 BL_En=1 | WL_S=ffffffdf | BL_S=0000000000000000 | LB_en=00000000 | WL 5: bit 5 of 5
+   7 | 001  |   0    | WL_En=1 BL_En=1 | WL_S=ffffffdf | BL_S=0000000000000000 | LB_en=00000000 | APPLY_PROG -> SHIFT_PROG_CONT (bit ignored)
+   8 | 001  |   0    | WL_En=1 BL_En=1 | WL_S=ffffffdf | BL_S=0000000000000000 | LB_en=00000000 | WL 9: bit 1 of 5
+   9 | 001  |   1    | WL_En=1 BL_En=1 | WL_S=ffffffdf | BL_S=0000000000000000 | LB_en=00000000 | WL 9: bit 2 of 5
+  10 | 001  |   0    | WL_En=1 BL_En=1 | WL_S=ffffffdf | BL_S=0000000000000000 | LB_en=00000000 | WL 9: bit 3 of 5
+  11 | 001  |   0    | WL_En=1 BL_En=1 | WL_S=ffffffdf | BL_S=0000000000000000 | LB_en=00000000 | WL 9: bit 4 of 5
+  12 | 001  |   1    | WL_En=1 BL_En=1 | WL_S=fffffddf | BL_S=0000000000000000 | LB_en=00000000 | WL 9: bit 5 of 5
+  13 | 000  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | Mode=000 -> IDLE, outputs off
+  14 | 000  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | IDLE clears the masks
+
+---- ERASE bit line 40 (101000) ----
+clk  | Mode | S_Ain_c | flags             | WL_S     | BL_S             | LB_en    | note
+  15 | 010  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | IDLE -> SHIFT_ERASE (no bit taken)
+  16 | 010  |   1    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | BL 40: bit 1 of 6
+  17 | 010  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | BL 40: bit 2 of 6
+  18 | 010  |   1    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | BL 40: bit 3 of 6
+  19 | 010  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | BL 40: bit 4 of 6
+  20 | 010  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | BL 40: bit 5 of 6
+  21 | 010  |   0    | WL_En=1 BL_En=1 | WL_S=00000000 | BL_S=fffffeffffffffff | LB_en=00000000 | BL 40: bit 6 of 6
+  22 | 000  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | Mode=000 -> IDLE
+  23 | 000  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | IDLE clears the masks
+
+---- LOOPBACK code 3 (00011) -> LB_en bits 0..3 on ----
+clk  | Mode | S_Ain_c | flags             | WL_S     | BL_S             | LB_en    | note
+  24 | 100  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | IDLE -> SHIFT_LB (no bit taken)
+  25 | 100  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | LB 3: bit 1 of 5
+  26 | 100  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | LB 3: bit 2 of 5
+  27 | 100  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | LB 3: bit 3 of 5
+  28 | 100  |   1    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | LB 3: bit 4 of 5
+  29 | 100  |   1    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=0000000f | LB 3: bit 5 of 5
+  30 | 000  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | Mode=000 -> IDLE
+
