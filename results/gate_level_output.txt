@@ -1,0 +1,10 @@
+TOOL:	xrun(64)	24.03-s004: Started on Nov 10, 2026 at 16:27:21 IST
+xrun(64): 24.03-s004: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+Loading snapshot worklib.tb_Control:sv .................... Done
+xcelium> source /eda/cadence/2024-25/RHELx86/XCELIUM_24.03.004/tools/xcelium/files/xmsimrc
+xcelium> run
+=== ALL 282 CHECKS PASSED ===
+Simulation complete via $finish(1) at time 9140 NS + 0
+./tb_Control.sv:176         $finish;
+xcelium> exit
+TOOL:	xrun(64)	24.03-s004: Exiting on Nov 10, 2026 at 16:27:22 IST  (total: 00:00:01)
