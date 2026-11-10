@@ -1,0 +1,144 @@
+TOOL:	xrun(64)	24.03-s004: Started on Nov 10, 2026 at 16:54:58 IST
+xrun(64): 24.03-s004: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+file: Control_syn.v
+	module worklib.Control:v
+		errors: 0, warnings: 0
+file: tb_demo.sv
+	module worklib.tb_demo:sv
+		errors: 0, warnings: 0
+file: /tools/kits/tower/PDK_TS18SL/FS120_STD_Cells_0_18um_2005_12/DW_TOWER_tsl18fs120/2005.12/verilog/zero/all.v
+	module all.an02d0:v
+		errors: 0, warnings: 0
+	module all.an03d0:v
+		errors: 0, warnings: 0
+	module all.aoi21d1:v
+		errors: 0, warnings: 0
+	module all.aoi221d1:v
+		errors: 0, warnings: 0
+	module all.aon211d1:v
+		errors: 0, warnings: 0
+	module all.aor21d1:v
+		errors: 0, warnings: 0
+	module all.buffd1:v
+		errors: 0, warnings: 0
+	module all.decrq1:v
+		errors: 0, warnings: 0
+	module all.deprq1:v
+		errors: 0, warnings: 0
+	module all.inv0d0:v
+		errors: 0, warnings: 0
+	module all.inv0d1:v
+		errors: 0, warnings: 0
+	primitive all.U_FD_EN_P_RB_NO:v
+		errors: 0, warnings: 0
+	primitive all.U_FD_EN_P_SB_NO:v
+		errors: 0, warnings: 0
+	module all.mx02d1:v
+		errors: 0, warnings: 0
+	module all.nd02d0:v
+		errors: 0, warnings: 0
+	module all.nd03d0:v
+		errors: 0, warnings: 0
+	module all.nd04d0:v
+		errors: 0, warnings: 0
+	module all.nd12d0:v
+		errors: 0, warnings: 0
+	module all.nr02d0:v
+		errors: 0, warnings: 0
+	module all.nr03d0:v
+		errors: 0, warnings: 0
+	module all.nr04d0:v
+		errors: 0, warnings: 0
+	module all.oai211d1:v
+		errors: 0, warnings: 0
+	module all.oai21d1:v
+		errors: 0, warnings: 0
+	module all.oaim21d1:v
+		errors: 0, warnings: 0
+file: /tools/kits/tower/PDK_TS18SL/FS120_STD_Cells_0_18um_2005_12/DW_TOWER_tsl18fs120/2005.12/verilog/zero/all.v
+	primitive all.U_MUX_2_1:v
+		errors: 0, warnings: 0
+		Caching library 'all' ....... Done
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		tb_demo
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.Control:v <0x0880e501>
+			streams:   0, words:     0
+		worklib.tb_demo:sv <0x7955850a>
+			streams:  19, words: 16758
+		all.mx02d1:v <0x3da329f7>
+			streams:   0, words:     0
+		all.oaim21d1:v <0x6c043f75>
+			streams:   0, words:     0
+		all.deprq1:v <0x2346757b>
+			streams:   0, words:     0
+		all.decrq1:v <0x2416cef7>
+			streams:   0, words:     0
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                   Instances  Unique
+		Modules:                 821      24
+		UDPs:                    160       3
+		Primitives:            1,172       6
+		Timing outputs:          819      21
+		Registers:               174      24
+		Scalar wires:          1,292       -
+		Expanded wires:          131       4
+		Always blocks:             1       1
+		Initial blocks:            3       3
+		Cont. assignments:         0       6
+		Pseudo assignments:       11       -
+		Timing checks:         2,002     362
+		Simulation timescale:    1ps
+	Writing initial simulation snapshot: worklib.tb_demo:sv
+Loading snapshot worklib.tb_demo:sv .................... Done
+xcelium> source /eda/cadence/2024-25/RHELx86/XCELIUM_24.03.004/tools/xcelium/files/xmsimrc
+xcelium> run
+
+---- PROGRAM word line 5 (00101), then word line 9 (01001) ----
+clk  | Mode | S_Ain_c | flags             | WL_S     | BL_S             | LB_en    | note
+   1 | 001  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | IDLE -> SHIFT_PROG (no bit taken)
+   2 | 001  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | WL 5: bit 1 of 5
+   3 | 001  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | WL 5: bit 2 of 5
+   4 | 001  |   1    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | WL 5: bit 3 of 5
+   5 | 001  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | WL 5: bit 4 of 5
+   6 | 001  |   1    | WL_En=1 BL_En=1 | WL_S=ffffffdf | BL_S=0000000000000000 | LB_en=00000000 | WL 5: bit 5 of 5
+   7 | 001  |   0    | WL_En=1 BL_En=1 | WL_S=ffffffdf | BL_S=0000000000000000 | LB_en=00000000 | APPLY_PROG -> SHIFT_PROG_CONT (bit ignored)
+   8 | 001  |   0    | WL_En=1 BL_En=1 | WL_S=ffffffdf | BL_S=0000000000000000 | LB_en=00000000 | WL 9: bit 1 of 5
+   9 | 001  |   1    | WL_En=1 BL_En=1 | WL_S=ffffffdf | BL_S=0000000000000000 | LB_en=00000000 | WL 9: bit 2 of 5
+  10 | 001  |   0    | WL_En=1 BL_En=1 | WL_S=ffffffdf | BL_S=0000000000000000 | LB_en=00000000 | WL 9: bit 3 of 5
+  11 | 001  |   0    | WL_En=1 BL_En=1 | WL_S=ffffffdf | BL_S=0000000000000000 | LB_en=00000000 | WL 9: bit 4 of 5
+  12 | 001  |   1    | WL_En=1 BL_En=1 | WL_S=fffffddf | BL_S=0000000000000000 | LB_en=00000000 | WL 9: bit 5 of 5
+  13 | 000  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | Mode=000 -> IDLE, outputs off
+  14 | 000  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | IDLE clears the masks
+
+---- ERASE bit line 40 (101000) ----
+clk  | Mode | S_Ain_c | flags             | WL_S     | BL_S             | LB_en    | note
+  15 | 010  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | IDLE -> SHIFT_ERASE (no bit taken)
+  16 | 010  |   1    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | BL 40: bit 1 of 6
+  17 | 010  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | BL 40: bit 2 of 6
+  18 | 010  |   1    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | BL 40: bit 3 of 6
+  19 | 010  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | BL 40: bit 4 of 6
+  20 | 010  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | BL 40: bit 5 of 6
+  21 | 010  |   0    | WL_En=1 BL_En=1 | WL_S=00000000 | BL_S=fffffeffffffffff | LB_en=00000000 | BL 40: bit 6 of 6
+  22 | 000  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | Mode=000 -> IDLE
+  23 | 000  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | IDLE clears the masks
+
+---- LOOPBACK code 3 (00011) -> LB_en bits 0..3 on ----
+clk  | Mode | S_Ain_c | flags             | WL_S     | BL_S             | LB_en    | note
+  24 | 100  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | IDLE -> SHIFT_LB (no bit taken)
+  25 | 100  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | LB 3: bit 1 of 5
+  26 | 100  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | LB 3: bit 2 of 5
+  27 | 100  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | LB 3: bit 3 of 5
+  28 | 100  |   1    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | LB 3: bit 4 of 5
+  29 | 100  |   1    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=0000000f | LB 3: bit 5 of 5
+  30 | 000  |   0    | WL_En=0 BL_En=0 | WL_S=00000000 | BL_S=0000000000000000 | LB_en=00000000 | Mode=000 -> IDLE
+
+Simulation complete via $finish(1) at time 320 NS + 0
+./tb_demo.sv:78         $finish;
+xcelium> exit
+TOOL:	xrun(64)	24.03-s004: Exiting on Nov 10, 2026 at 16:55:00 IST  (total: 00:00:02)
