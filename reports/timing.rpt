@@ -1,0 +1,454 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 10
+Design : Control
+Version: R-2020.09-SP2
+Date   : Tue Nov 10 11:36:33 2026
+****************************************
+
+Operating Conditions: tsl18fs120_typ   Library: tsl18fs120_typ
+Wire Load Model Mode: enclosed
+
+  Startpoint: current_state_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: lb_en_reg_reg[31]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  Control            4000                  tsl18fs120_typ
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  current_state_reg[0]/CP (decrq1)         0.00       0.00 r
+  current_state_reg[0]/Q (decrq1)          0.31       0.31 f
+  U1284/ZN (inv0d0)                        0.46       0.77 r
+  U1209/ZN (nd03d0)                        0.16       0.93 f
+  U1067/ZN (inv0d0)                        0.22       1.15 r
+  U1066/ZN (nd02d0)                        0.28       1.43 f
+  U1054/ZN (nr02d0)                        0.60       2.03 r
+  U1050/Z (an02d0)                         0.24       2.27 r
+  U1024/ZN (nd02d0)                        0.31       2.58 f
+  U1012/ZN (inv0d0)                        0.35       2.93 r
+  U1011/ZN (nd02d0)                        0.18       3.11 f
+  U1007/ZN (inv0d0)                        0.29       3.40 r
+  U1006/ZN (nd02d0)                        0.17       3.56 f
+  U1003/ZN (nr02d0)                        0.15       3.71 r
+  lb_en_reg_reg[31]/D (decrq1)             0.00       3.71 r
+  data arrival time                                   3.71
+
+  clock clk (rise edge)                   10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  lb_en_reg_reg[31]/CP (decrq1)            0.00      10.00 r
+  library setup time                      -0.20       9.80
+  data required time                                  9.80
+  -----------------------------------------------------------
+  data required time                                  9.80
+  data arrival time                                  -3.71
+  -----------------------------------------------------------
+  slack (MET)                                         6.09
+
+
+  Startpoint: current_state_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: lb_en_reg_reg[30]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  Control            4000                  tsl18fs120_typ
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  current_state_reg[0]/CP (decrq1)         0.00       0.00 r
+  current_state_reg[0]/Q (decrq1)          0.31       0.31 f
+  U1284/ZN (inv0d0)                        0.46       0.77 r
+  U1209/ZN (nd03d0)                        0.16       0.93 f
+  U1067/ZN (inv0d0)                        0.22       1.15 r
+  U1066/ZN (nd02d0)                        0.28       1.43 f
+  U1054/ZN (nr02d0)                        0.60       2.03 r
+  U1050/Z (an02d0)                         0.24       2.27 r
+  U1024/ZN (nd02d0)                        0.31       2.58 f
+  U1012/ZN (inv0d0)                        0.35       2.93 r
+  U1011/ZN (nd02d0)                        0.18       3.11 f
+  U1007/ZN (inv0d0)                        0.29       3.40 r
+  U1006/ZN (nd02d0)                        0.17       3.56 f
+  U1004/ZN (inv0d0)                        0.14       3.70 r
+  lb_en_reg_reg[30]/D (decrq1)             0.00       3.70 r
+  data arrival time                                   3.70
+
+  clock clk (rise edge)                   10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  lb_en_reg_reg[30]/CP (decrq1)            0.00      10.00 r
+  library setup time                      -0.19       9.81
+  data required time                                  9.81
+  -----------------------------------------------------------
+  data required time                                  9.81
+  data arrival time                                  -3.70
+  -----------------------------------------------------------
+  slack (MET)                                         6.11
+
+
+  Startpoint: current_state_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: lb_en_reg_reg[29]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  Control            4000                  tsl18fs120_typ
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  current_state_reg[0]/CP (decrq1)         0.00       0.00 r
+  current_state_reg[0]/Q (decrq1)          0.31       0.31 f
+  U1284/ZN (inv0d0)                        0.46       0.77 r
+  U1209/ZN (nd03d0)                        0.16       0.93 f
+  U1067/ZN (inv0d0)                        0.22       1.15 r
+  U1066/ZN (nd02d0)                        0.28       1.43 f
+  U1054/ZN (nr02d0)                        0.60       2.03 r
+  U1050/Z (an02d0)                         0.24       2.27 r
+  U1024/ZN (nd02d0)                        0.31       2.58 f
+  U1012/ZN (inv0d0)                        0.35       2.93 r
+  U1011/ZN (nd02d0)                        0.18       3.11 f
+  U1007/ZN (inv0d0)                        0.29       3.40 r
+  U1006/ZN (nd02d0)                        0.17       3.56 f
+  U1005/ZN (oaim21d1)                      0.09       3.66 r
+  lb_en_reg_reg[29]/D (decrq1)             0.00       3.66 r
+  data arrival time                                   3.66
+
+  clock clk (rise edge)                   10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  lb_en_reg_reg[29]/CP (decrq1)            0.00      10.00 r
+  library setup time                      -0.18       9.82
+  data required time                                  9.82
+  -----------------------------------------------------------
+  data required time                                  9.82
+  data arrival time                                  -3.66
+  -----------------------------------------------------------
+  slack (MET)                                         6.16
+
+
+  Startpoint: current_state_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: lb_en_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  Control            4000                  tsl18fs120_typ
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  current_state_reg[0]/CP (decrq1)         0.00       0.00 r
+  current_state_reg[0]/Q (decrq1)          0.32       0.32 r
+  U1284/ZN (inv0d0)                        0.25       0.57 f
+  U1209/ZN (nd03d0)                        0.25       0.82 r
+  U1067/ZN (inv0d0)                        0.12       0.94 f
+  U1066/ZN (nd02d0)                        0.28       1.22 r
+  U1054/ZN (nr02d0)                        0.27       1.49 f
+  U1050/Z (an02d0)                         0.25       1.74 f
+  U1049/ZN (inv0d0)                        0.66       2.40 r
+  U1047/ZN (nd02d0)                        0.18       2.59 f
+  U1046/ZN (inv0d0)                        0.33       2.91 r
+  U1045/ZN (nd02d0)                        0.12       3.03 f
+  U1044/ZN (inv0d0)                        0.22       3.26 r
+  U1043/ZN (oai21d1)                       0.10       3.36 f
+  U1042/Z (aor21d1)                        0.20       3.56 f
+  lb_en_reg_reg[1]/D (decrq1)              0.00       3.56 f
+  data arrival time                                   3.56
+
+  clock clk (rise edge)                   10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  lb_en_reg_reg[1]/CP (decrq1)             0.00      10.00 r
+  library setup time                      -0.22       9.78
+  data required time                                  9.78
+  -----------------------------------------------------------
+  data required time                                  9.78
+  data arrival time                                  -3.56
+  -----------------------------------------------------------
+  slack (MET)                                         6.22
+
+
+  Startpoint: current_state_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: lb_en_reg_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  Control            4000                  tsl18fs120_typ
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  current_state_reg[0]/CP (decrq1)         0.00       0.00 r
+  current_state_reg[0]/Q (decrq1)          0.32       0.32 r
+  U1284/ZN (inv0d0)                        0.25       0.57 f
+  U1209/ZN (nd03d0)                        0.25       0.82 r
+  U1067/ZN (inv0d0)                        0.12       0.94 f
+  U1066/ZN (nd02d0)                        0.28       1.22 r
+  U1054/ZN (nr02d0)                        0.27       1.49 f
+  U1050/Z (an02d0)                         0.25       1.74 f
+  U1049/ZN (inv0d0)                        0.66       2.40 r
+  U1047/ZN (nd02d0)                        0.18       2.59 f
+  U1046/ZN (inv0d0)                        0.33       2.91 r
+  U1045/ZN (nd02d0)                        0.12       3.03 f
+  U1044/ZN (inv0d0)                        0.22       3.26 r
+  U1043/ZN (oai21d1)                       0.10       3.36 f
+  lb_en_reg_reg[2]/D (decrq1)              0.00       3.36 f
+  data arrival time                                   3.36
+
+  clock clk (rise edge)                   10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  lb_en_reg_reg[2]/CP (decrq1)             0.00      10.00 r
+  library setup time                      -0.27       9.73
+  data required time                                  9.73
+  -----------------------------------------------------------
+  data required time                                  9.73
+  data arrival time                                  -3.36
+  -----------------------------------------------------------
+  slack (MET)                                         6.37
+
+
+  Startpoint: current_state_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: lb_en_reg_reg[28]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  Control            4000                  tsl18fs120_typ
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  current_state_reg[0]/CP (decrq1)         0.00       0.00 r
+  current_state_reg[0]/Q (decrq1)          0.31       0.31 f
+  U1284/ZN (inv0d0)                        0.46       0.77 r
+  U1209/ZN (nd03d0)                        0.16       0.93 f
+  U1067/ZN (inv0d0)                        0.22       1.15 r
+  U1066/ZN (nd02d0)                        0.28       1.43 f
+  U1054/ZN (nr02d0)                        0.60       2.03 r
+  U1050/Z (an02d0)                         0.24       2.27 r
+  U1024/ZN (nd02d0)                        0.31       2.58 f
+  U1012/ZN (inv0d0)                        0.35       2.93 r
+  U1011/ZN (nd02d0)                        0.18       3.11 f
+  U1007/ZN (inv0d0)                        0.29       3.40 r
+  lb_en_reg_reg[28]/D (decrq1)             0.00       3.40 r
+  data arrival time                                   3.40
+
+  clock clk (rise edge)                   10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  lb_en_reg_reg[28]/CP (decrq1)            0.00      10.00 r
+  library setup time                      -0.23       9.77
+  data required time                                  9.77
+  -----------------------------------------------------------
+  data required time                                  9.77
+  data arrival time                                  -3.40
+  -----------------------------------------------------------
+  slack (MET)                                         6.37
+
+
+  Startpoint: current_state_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: lb_en_reg_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  Control            4000                  tsl18fs120_typ
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  current_state_reg[0]/CP (decrq1)         0.00       0.00 r
+  current_state_reg[0]/Q (decrq1)          0.32       0.32 r
+  U1284/ZN (inv0d0)                        0.25       0.57 f
+  U1209/ZN (nd03d0)                        0.25       0.82 r
+  U1067/ZN (inv0d0)                        0.12       0.94 f
+  U1066/ZN (nd02d0)                        0.28       1.22 r
+  U1054/ZN (nr02d0)                        0.27       1.49 f
+  U1050/Z (an02d0)                         0.25       1.74 f
+  U1049/ZN (inv0d0)                        0.66       2.40 r
+  U1047/ZN (nd02d0)                        0.18       2.59 f
+  U1046/ZN (inv0d0)                        0.33       2.91 r
+  U1045/ZN (nd02d0)                        0.12       3.03 f
+  U1044/ZN (inv0d0)                        0.22       3.26 r
+  U1040/ZN (oai21d1)                       0.08       3.34 f
+  lb_en_reg_reg[3]/D (decrq1)              0.00       3.34 f
+  data arrival time                                   3.34
+
+  clock clk (rise edge)                   10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  lb_en_reg_reg[3]/CP (decrq1)             0.00      10.00 r
+  library setup time                      -0.24       9.76
+  data required time                                  9.76
+  -----------------------------------------------------------
+  data required time                                  9.76
+  data arrival time                                  -3.34
+  -----------------------------------------------------------
+  slack (MET)                                         6.42
+
+
+  Startpoint: current_state_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: lb_en_reg_reg[25]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  Control            4000                  tsl18fs120_typ
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  current_state_reg[0]/CP (decrq1)         0.00       0.00 r
+  current_state_reg[0]/Q (decrq1)          0.31       0.31 f
+  U1284/ZN (inv0d0)                        0.46       0.77 r
+  U1209/ZN (nd03d0)                        0.16       0.93 f
+  U1067/ZN (inv0d0)                        0.22       1.15 r
+  U1066/ZN (nd02d0)                        0.28       1.43 f
+  U1054/ZN (nr02d0)                        0.60       2.03 r
+  U1050/Z (an02d0)                         0.24       2.27 r
+  U1024/ZN (nd02d0)                        0.31       2.58 f
+  U1012/ZN (inv0d0)                        0.35       2.93 r
+  U1011/ZN (nd02d0)                        0.18       3.11 f
+  U1010/ZN (oai21d1)                       0.12       3.23 r
+  U1009/Z (aor21d1)                        0.10       3.33 r
+  lb_en_reg_reg[25]/D (decrq1)             0.00       3.33 r
+  data arrival time                                   3.33
+
+  clock clk (rise edge)                   10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  lb_en_reg_reg[25]/CP (decrq1)            0.00      10.00 r
+  library setup time                      -0.18       9.82
+  data required time                                  9.82
+  -----------------------------------------------------------
+  data required time                                  9.82
+  data arrival time                                  -3.33
+  -----------------------------------------------------------
+  slack (MET)                                         6.50
+
+
+  Startpoint: current_state_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: lb_en_reg_reg[5]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  Control            4000                  tsl18fs120_typ
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  current_state_reg[0]/CP (decrq1)         0.00       0.00 r
+  current_state_reg[0]/Q (decrq1)          0.32       0.32 r
+  U1284/ZN (inv0d0)                        0.25       0.57 f
+  U1209/ZN (nd03d0)                        0.25       0.82 r
+  U1067/ZN (inv0d0)                        0.12       0.94 f
+  U1066/ZN (nd02d0)                        0.28       1.22 r
+  U1054/ZN (nr02d0)                        0.27       1.49 f
+  U1050/Z (an02d0)                         0.25       1.74 f
+  U1049/ZN (inv0d0)                        0.66       2.40 r
+  U1047/ZN (nd02d0)                        0.18       2.59 f
+  U1046/ZN (inv0d0)                        0.33       2.91 r
+  U1039/ZN (oai21d1)                       0.10       3.01 f
+  U1038/ZN (inv0d0)                        0.16       3.17 r
+  U1037/ZN (oai21d1)                       0.07       3.24 f
+  lb_en_reg_reg[5]/D (decrq1)              0.00       3.24 f
+  data arrival time                                   3.24
+
+  clock clk (rise edge)                   10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  lb_en_reg_reg[5]/CP (decrq1)             0.00      10.00 r
+  library setup time                      -0.24       9.76
+  data required time                                  9.76
+  -----------------------------------------------------------
+  data required time                                  9.76
+  data arrival time                                  -3.24
+  -----------------------------------------------------------
+  slack (MET)                                         6.52
+
+
+  Startpoint: current_state_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: lb_en_reg_reg[9]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  Control            4000                  tsl18fs120_typ
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  current_state_reg[0]/CP (decrq1)         0.00       0.00 r
+  current_state_reg[0]/Q (decrq1)          0.31       0.31 f
+  U1284/ZN (inv0d0)                        0.46       0.77 r
+  U1209/ZN (nd03d0)                        0.16       0.93 f
+  U1067/ZN (inv0d0)                        0.22       1.15 r
+  U1066/ZN (nd02d0)                        0.28       1.43 f
+  U1054/ZN (nr02d0)                        0.60       2.03 r
+  U1048/ZN (nd02d0)                        0.34       2.37 f
+  U1035/ZN (nd12d0)                        0.34       2.71 f
+  U1034/ZN (nd02d0)                        0.15       2.86 r
+  U1033/ZN (inv0d0)                        0.13       2.99 f
+  U1032/ZN (oai21d1)                       0.10       3.09 r
+  U1031/ZN (inv0d0)                        0.10       3.19 f
+  U1030/ZN (oai21d1)                       0.07       3.26 r
+  lb_en_reg_reg[9]/D (decrq1)              0.00       3.26 r
+  data arrival time                                   3.26
+
+  clock clk (rise edge)                   10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  lb_en_reg_reg[9]/CP (decrq1)             0.00      10.00 r
+  library setup time                      -0.20       9.80
+  data required time                                  9.80
+  -----------------------------------------------------------
+  data required time                                  9.80
+  data arrival time                                  -3.26
+  -----------------------------------------------------------
+  slack (MET)                                         6.54
+
+
+1
