@@ -53,6 +53,21 @@ at 0. In program and erase **both** sides are driven (one pulses, the other is g
 
 ---
 
+## Schematics (Design Vision, elaborated RTL view)
+
+Generic register-level view (`analyze` + `elaborate`, before mapping to Tower cells) - this is the
+readable "functional schematic"; the mapped netlist has 731 cells and is too dense to read.
+
+| Picture | What it shows |
+|---|---|
+| ![top](pics/01_top_symbol.png) | **Top-level symbol**: inputs `clk`, `rst_n`, `S_Ain_c`, `Mode[2:0]`; outputs `WL_Enable/Zero`, `BL_Enable/Zero`, `WL_S[31:0]`, `BL_S[63:0]`, `LB_en[31:0]` |
+| ![wl](pics/02_wl_shift_register.png) | **Word-line shift register** (`wl_shift_reg`): `S_Ain_c` enters bit by bit, each flip-flop feeds the next (`next_wl_addr`) |
+| ![bl](pics/03_bl_decoded_registers.png) | **Bit-line select registers** (`bl_decoded_reg[..]`): one flip-flop per bit line, loaded through the 64-bit mux on the left; they drive `BL_S` |
+| ![fsm](pics/04_fsm_state_register.png) | **FSM**: next-state mux (`C3106`) choosing between transitions, `current_state_reg`, and the state-decode gates |
+| ![cnt](pics/05_bl_bit_counter.png) | **Bit counter** (`bl_cnt_reg`) that counts the 6 erase-code bits and tells the FSM when a code is complete |
+
+---
+
 ## The tests
 
 `tb_Control.sv` is **self-checking**: after every step it compares all 7 outputs with the expected
@@ -100,6 +115,7 @@ codes, to show how a code turns into `WL_S` / `BL_S` / `LB_en`.
 | `results/gate_level_ts18pm_BUG_reset_1ns.txt` | the failing run that exposed bug 3 (kept as evidence) |
 | `results/gate_level_output.txt`, `results/gate_level_demo.txt`, `results/demo_output.txt` | old-library (fs120) runs |
 | `docs/ts18pm_kit_scan.txt` | listing of the TS18PM_1 kit used to choose the library files |
+| `pics/` | Design Vision schematic screenshots (see Schematics section) |
 | `CLAUDE.md` | working notes: rules, lab recipe, detailed status and bug log |
 
 ---
