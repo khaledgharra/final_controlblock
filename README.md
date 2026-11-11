@@ -40,11 +40,17 @@ the operation and a code is shifted in serially, MSB first, on `S_Ain_c`:
 | Mode | Operation | Code | Outputs |
 |---|---|---|---|
 | `000` | Idle | - | everything off, masks cleared |
-| `001` | Program | 5 bits -> word line 0..31 | `WL_S` = selected word lines (cumulative, **0 = selected**); all bit lines held at 0 |
-| `010` | Erase | 6 bits -> bit line 0..63 | `BL_S` = selected bit lines (cumulative, 0 = selected); all word lines held at 0 |
+| `001` | Program | 5 bits -> word line 0..31 | `WL_S`: all 1 (all lines connected), each received code turns **its** bit off (cumulative); all bit lines held at 0 |
+| `010` | Erase | 6 bits -> bit line 0..63 | `BL_S`: all 1, each received code turns its bit off (cumulative); all word lines held at 0 |
 | `011` | Inference | - | everything off |
 | `100` | Loop-back | 5 bits -> N | `LB_en` = thermometer code (bits 0..N set) |
 | `101`-`111` | undefined | - | behave like idle |
+
+**Mask meaning (confirmed by the supervisor):** `WL_S`/`BL_S` bits are 1 = line connected, and the
+line whose number is received is turned off (0). Example: erase code 40 -> `BL_S = fffffeffffffffff`.
+Before the first complete code `WL_Enable`/`BL_Enable` = 0, so the outputs are forced to all 0 (nothing
+is driven by a partial code); once a full code is in, the enable goes to 1 and the stored mask
+(all 1 except the received bit) appears on the output.
 
 `WL_Enable`/`BL_Enable` say a side of the array is driven; `WL_Zero`/`BL_Zero` say that side is held
 at 0. In program and erase **both** sides are driven (one pulses, the other is grounded), so
@@ -77,7 +83,7 @@ outputs are checked after the rising edge, so the same testbench runs on the RTL
 | Section | What it checks | Checks |
 |---|---|---|
 | Reset | all outputs off during and after reset | 2 |
-| Program | all 32 codes in a row; each one is applied and held, masks accumulate | 65 |
+| Program | all 32 codes in a row; each one is applied and held, turned-off bits accumulate | 65 |
 | Program after idle | going through idle clears the masks | 2 |
 | Erase | all 64 codes in a row, applied and held, masks accumulate | 130 |
 | Loop-back | all 32 codes give the right thermometer; a lower code shrinks it | 67 |
@@ -146,6 +152,7 @@ RTL only (any simulator, e.g. Icarus): `iverilog -g2012 Control.sv tb_Control.sv
 ## Open questions for the supervisor
 
 1. `WL_Enable` and `BL_Enable` are always equal in the RTL - should they stay two separate pins?
-2. Is the 1-clock gap between consecutive codes acceptable?
-3. Is 0.05 pF a reasonable estimate of the output load (word-line / bit-line drivers)?
-4. Merge `ts18pm` into `main`, and start place & route with the new library?
+2. (answered) mask meaning: 1 = connected, received code turns its bit off.
+3. Is the 1-clock gap between consecutive codes acceptable?
+4. Is 0.05 pF a reasonable estimate of the output load (word-line / bit-line drivers)?
+5. Merge `ts18pm` into `main`, and start place & route with the new library?

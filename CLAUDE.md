@@ -39,7 +39,8 @@ never modified.
   1. (done) DRC min_capacitance fixed with set_load - commit 06ea472.
   2. Open question: `assign BL_Enable = WL_Enable;` in netlist (VO-4) - optional
      `set_fix_multiple_port_nets -all -buffer_constants`, not approved yet.
-  3. Questions for supervisor: WL_Enable == BL_Enable always? 1-clock gap between codes?
+  3. SETTLED by supervisor 2026-11-11: WL_S/BL_S all 1 = connected; received code turns its bit OFF.
+     Questions for supervisor: WL_Enable == BL_Enable always? 1-clock gap between codes?
   4. Not looked at yet: `Control_block_HighZ_not_fixed.txt`.
 
 ---------------------------------------------------------------------------
