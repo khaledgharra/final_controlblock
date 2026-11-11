@@ -21,7 +21,9 @@ never modified.
 5. Keep this file and the work log `~/vlsi_worklog/final_controlblock_LOG.md` (Mac) updated
    after every step. Update "STATUS / NEXT STEPS" below before ending a session.
 6. Lab shell is **tcsh**: no `2>&1` (use `>&` or wrap in `bash -c '...'`).
-7. The Mac copy under ~/Desktop is iCloud-offloaded (`.git` unreadable). On the Mac, work in a fresh
+7. Keep `README.md` (the public explanation: status table, tests, files, problems) in sync with
+   every new result or bug fix.
+8. The Mac copy under ~/Desktop is iCloud-offloaded (`.git` unreadable). On the Mac, work in a fresh
    clone outside ~/Desktop. Real work runs on the lab.
 
 ---------------------------------------------------------------------------
