@@ -2,15 +2,15 @@
 # setup for typical cells 
 set company    "Tower Semiconductors"
 set designer   "Shmuel Zagury"
-set TOWER_DIR "/tools/kits/tower/PDK_TS18SL/FS120_STD_Cells_0_18um_2005_12/DW_TOWER_tsl18fs120/2005.12/synopsys/2004.12"
+set TOWER_DIR "/tools/kits/tower/TS18PM_1/tsl18fs190svt_Rev_2019.09/lib"
 set SYNOPSYS "/tools/synopsys78/FEV/syn_vN-2017.09-SP3"
 set TECH        tsl018
 
 define_design_lib WORK -path "./WORK"
 
-set search_path   [concat $search_path "." "$TOWER_DIR/models" ]
-set target_library "tsl18fs120_typ.db"  
-set symbol_library "$TOWER_DIR/icons/tsl18fs120_icon.sdb" 
+set search_path   [concat $search_path "." "$TOWER_DIR/db" ]
+set target_library "tsl18fs190svt_tt_1p8v_25c.db"  
+#set symbol_library "$TOWER_DIR/icons/tsl18fs120_icon.sdb" 
 set plot_command "lpr -Pbp" 
 set synthetic_library " dw_foundation.sldb "
 #set synthetic_library "dw01.sldb dw02.sldb dw03.sldb dw04.sldb \ 
