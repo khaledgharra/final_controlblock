@@ -33,8 +33,9 @@ never modified.
   - Synthesis: slack +7.15 ns @ 10 ns, 730 cells, cell area 12691 (area units differ from fs120)
   - Gate-level: 282/282 with zero delay AND with real delays (`tb_Control_gl.sv`)
 - Next:
-  1. Find which rule the 129 tiny DRC violations break (`grep -n "max_\|min_\|Constraint" drc.log`),
-     decide fix with the user.
+  1. DRC: the 129 violations are **min_capacitance** on every output net (64 BL_S + 32 WL_S + 32 LB_en
+     + 1). Cause: no `set_load` on outputs, so output nets have ~0 pF load. Proposed fix (NOT approved yet):
+     `set_load 0.05 [all_outputs]` in control_syn.tcl before compile. Ask the user.
   2. Open question: `assign BL_Enable = WL_Enable;` in netlist (VO-4) - optional
      `set_fix_multiple_port_nets -all -buffer_constants`, not approved yet.
   3. Questions for supervisor: WL_Enable == BL_Enable always? 1-clock gap between codes?
@@ -81,4 +82,5 @@ xrun -sv Control_syn.v tb_Control.sv -v /tools/kits/tower/PDK_TS18SL/FS120_STD_C
 | 1 | tcsh-redirect | `Ambiguous output redirect.` | lab shell is tcsh, `2>&1` is bash syntax | wrap in `bash -c '...'` |
 | 2 | timescale-missing | xmelab `*F,CUMSTS: Timescale directive missing` with TS18PM cells | new cell models have `1ns/1ps`, netlist has none | add `-timescale 1ns/1ps` to xrun |
 | 3 | reset-check-1ns | real-delay gate sim: `FAIL async reset during erase`, 281/282 | `tb_Control.sv:165` checks 1 ns after `rst_n=0`; new library models have real delays (old run used zero-delay models) | `tb_Control_gl.sv` waits 3 ns -> 282/282; zero-delay run with original tb also 282/282 |
+| 5 | drc-min-cap (OPEN) | DRC cost 88.4, 129 `min_capacitance` violations on output ports (report: reports/drc_violators.rpt) | no output load constraint -> ~0 pF on output nets; new lib has min_capacitance | proposed `set_load` on outputs, waiting for user |
 | 4 | xrun-unresolved-UDP | (old lib) `U_MUX_2_1 is unresolved` | UDPs in separate file | use `-v .../verilog/zero/all.v` |
