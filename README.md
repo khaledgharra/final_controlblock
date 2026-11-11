@@ -71,6 +71,17 @@ readable "functional schematic"; the mapped netlist has 731 cells and is too den
 | ![bl](pics/03_bl_decoded_registers.png) | **Bit-line select registers** (`bl_decoded_reg[..]`): one flip-flop per bit line, loaded through the 64-bit mux on the left; they drive `BL_S` |
 | ![fsm](pics/04_fsm_state_register.png) | **FSM**: next-state mux (`C3106`) choosing between transitions, `current_state_reg`, and the state-decode gates |
 | ![cnt](pics/05_bl_bit_counter.png) | **Bit counter** (`bl_cnt_reg`) that counts the 6 erase-code bits and tells the FSM when a code is complete |
+| ![lte](pics/06_loopback_comparators.png) | **Loop-back comparators** (`lte_151_I0..I31`, from `Control.sv` line 151): `LB_en[i] = (i <= code)` - 32 "<=" comparators build the thermometer code |
+
+## Waveforms (SimVision, RTL + `tb_demo.sv`)
+
+Run with `xrun -sv Control.sv tb_demo.sv -access +r -gui` (needs a display, e.g. `setenv DISPLAY :2`).
+
+| Picture | What it shows |
+|---|---|
+| ![full](pics/07_waveform_full_run.png) | **Whole demo, 0-320 ns**: program (Mode 1: word lines 5 then 9) -> IDLE -> erase (Mode 2: bit line 40) -> IDLE -> loop-back (Mode 4: code 3). Every Mode change passes through IDLE, which turns outputs off and resets the masks |
+| ![prog](pics/08_waveform_program_wl5.png) | **Program, word line 5**: code 00101 arrives on `S_Ain_c`; at the 5th bit the FSM goes `SHIFT_PROG -> APPLY_PROG`, `WL_Enable`=`BL_Enable`=1, `BL_Zero`=1 (bit lines grounded) and `WL_S` = `FFFFFFDF` (all word lines connected, line 5 turned off) |
+| ![erase](pics/09_waveform_erase_bl40.png) | **Erase, bit line 40**: at the 6th bit `SHIFT_ERASE -> APPLY_ERASE`, `WL_Zero`=1 (word lines grounded), `BL_S` = `FFFFFEFF_FFFFFFFF` (bit 40 turned off); Mode -> 0 sends it back to IDLE and the outputs go to 0 |
 
 ---
 

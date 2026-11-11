@@ -35,6 +35,8 @@ never modified.
   - Synthesis (with `set_load 0.05 [all_outputs]`): slack +4.60 ns @ 10 ns, 731 cells, cell area 12700,
     0 DRC violations (area units differ from fs120). Without set_load it was +7.15 ns / 730 cells / 129 DRC.
   - Gate-level: 282/282 with zero delay AND with real delays (`tb_Control_gl.sv`)
+- Meeting prep DONE (2026-11-11): README explains everything; pics/01-09 = DV schematics + SimVision waveforms.
+  Supervisor asked for a functional schematic at this week's meeting.
 - Next:
   1. (done) DRC min_capacitance fixed with set_load - commit 06ea472.
   2. Open question: `assign BL_Enable = WL_Enable;` in netlist (VO-4) - optional
