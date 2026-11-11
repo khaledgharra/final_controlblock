@@ -32,6 +32,11 @@ Not done yet: place & route (Innovus), multi-corner timing (only the typical cor
 
 ---
 
+**How the generated gates implement the code (part by part, with real netlist cells):**
+[docs/HOW_THE_CIRCUIT_IMPLEMENTS_THE_CODE.md](docs/HOW_THE_CIRCUIT_IMPLEMENTS_THE_CODE.md)
+
+---
+
 ## The design in one paragraph
 
 Module `Control` is an 11-state FSM clocked by `clk` with async reset `rst_n`. `Mode[2:0]` selects
@@ -131,6 +136,7 @@ codes, to show how a code turns into `WL_S` / `BL_S` / `LB_en`.
 | `results/gate_level_output_ts18pm_delay.txt` | TS18PM netlist, real delays: 282/282 |
 | `results/gate_level_ts18pm_BUG_reset_1ns.txt` | the failing run that exposed bug 3 (kept as evidence) |
 | `results/gate_level_output.txt`, `results/gate_level_demo.txt`, `results/demo_output.txt` | old-library (fs120) runs |
+| `docs/HOW_THE_CIRCUIT_IMPLEMENTS_THE_CODE.md` | code -> hardware walkthrough (block diagram, cell mapping) |
 | `docs/ts18pm_kit_scan.txt` | listing of the TS18PM_1 kit used to choose the library files |
 | `pics/` | Design Vision schematic screenshots (see Schematics section) |
 | `CLAUDE.md` | working notes: rules, lab recipe, detailed status and bug log |
