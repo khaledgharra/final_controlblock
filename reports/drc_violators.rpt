@@ -1,0 +1,535 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version R-2020.09-SP2 for linux64 - Dec 03, 2020 
+
+                    Copyright (c) 1988 - 2020 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+Initializing gui preferences from file  /users/epkgms/.synopsys_dc_gui/preferences.tcl
+Running PRESTO HDLC
+Compiling source file ./Control.sv
+Presto compilation completed successfully.
+Loading db file '/tools/kits/tower/TS18PM_1/tsl18fs190svt_Rev_2019.09/lib/db/tsl18fs190svt_tt_1p8v_25c.db'
+Loading db file '/eda/synopsys/2020-21/RHELx86/SYN_2020.09-SP2/libraries/syn/dw_foundation.sldb'
+Loading db file '/eda/synopsys/2020-21/RHELx86/SYN_2020.09-SP2/libraries/syn/gtech.db'
+Loading db file '/eda/synopsys/2020-21/RHELx86/SYN_2020.09-SP2/libraries/syn/standard.sldb'
+  Loading link library 'tsl18fs190svt_tt_1p8v_25c'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Warning:  ./Control.sv:151: signed to unsigned conversion occurs. (VER-318)
+
+Statistics for case statements in always block at line 171 in file
+	'./Control.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           174            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine Control line 85 in file
+		'./Control.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    lb_en_reg_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  current_state_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  wl_shift_reg_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  bl_shift_reg_reg   | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      LB_SR_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     wl_cnt_reg      | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     bl_cnt_reg      | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     lb_cnt_reg      | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   wl_decoded_reg    | Flip-flop |  32   |  Y  | N  | N  | Y  | N  | N  | N  |
+|   bl_decoded_reg    | Flip-flop |  64   |  Y  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (Control)
+Elaborated 1 design.
+Current design is now 'Control'.
+Current design is 'Control'.
+
+  Linking design 'Control'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  Control                     /users/epkgms/Desktop/khaled/final_controlblock/Control.db
+  tsl18fs190svt_tt_1p8v_25c (library) /tools/kits/tower/TS18PM_1/tsl18fs190svt_Rev_2019.09/lib/db/tsl18fs190svt_tt_1p8v_25c.db
+  dw_foundation.sldb (library) /eda/synopsys/2020-21/RHELx86/SYN_2020.09-SP2/libraries/syn/dw_foundation.sldb
+
+ 
+****************************************
+check_design summary:
+Version:     R-2020.09-SP2
+Date:        Wed Nov 11 16:11:25 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Cells                                                               4
+    Cells do not drive (LINT-1)                                     4
+--------------------------------------------------------------------------------
+
+Warning: In design 'Control', cell 'C3165' does not drive any nets. (LINT-1)
+Warning: In design 'Control', cell 'C3242' does not drive any nets. (LINT-1)
+Warning: In design 'Control', cell 'C3254' does not drive any nets. (LINT-1)
+Warning: In design 'Control', cell 'C3286' does not drive any nets. (LINT-1)
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | R-2020.09-DWBB_202009.2 |     *     |
+| Licensed DW Building Blocks        | R-2020.09-DWBB_202009.2 |     *     |
+============================================================================
+
+
+Information: There are 4 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'Control'
+WARNING: cell lb_cnt_reg[0] ignores exact_map
+WARNING: cell current_state_reg[0] ignores exact_map
+WARNING: cell bl_shift_reg_reg[0] ignores exact_map
+WARNING: cell bl_shift_reg_reg[1] ignores exact_map
+WARNING: cell bl_shift_reg_reg[2] ignores exact_map
+WARNING: cell bl_shift_reg_reg[3] ignores exact_map
+WARNING: cell bl_shift_reg_reg[4] ignores exact_map
+WARNING: cell current_state_reg[1] ignores exact_map
+WARNING: cell current_state_reg[3] ignores exact_map
+WARNING: cell bl_cnt_reg[1] ignores exact_map
+WARNING: cell current_state_reg[2] ignores exact_map
+WARNING: cell LB_SR_reg[0] ignores exact_map
+WARNING: cell LB_SR_reg[1] ignores exact_map
+WARNING: cell LB_SR_reg[2] ignores exact_map
+WARNING: cell LB_SR_reg[3] ignores exact_map
+WARNING: cell wl_shift_reg_reg[0] ignores exact_map
+WARNING: cell wl_shift_reg_reg[1] ignores exact_map
+WARNING: cell wl_shift_reg_reg[2] ignores exact_map
+WARNING: cell wl_shift_reg_reg[3] ignores exact_map
+WARNING: cell bl_cnt_reg[0] ignores exact_map
+WARNING: cell bl_cnt_reg[2] ignores exact_map
+WARNING: cell wl_cnt_reg[1] ignores exact_map
+WARNING: cell wl_cnt_reg[0] ignores exact_map
+WARNING: cell wl_cnt_reg[2] ignores exact_map
+WARNING: cell lb_en_reg_reg[8] ignores exact_map
+WARNING: cell lb_en_reg_reg[9] ignores exact_map
+WARNING: cell lb_en_reg_reg[10] ignores exact_map
+WARNING: cell lb_en_reg_reg[11] ignores exact_map
+WARNING: cell lb_en_reg_reg[12] ignores exact_map
+WARNING: cell lb_en_reg_reg[13] ignores exact_map
+WARNING: cell lb_en_reg_reg[14] ignores exact_map
+WARNING: cell lb_en_reg_reg[15] ignores exact_map
+WARNING: cell lb_en_reg_reg[16] ignores exact_map
+WARNING: cell lb_en_reg_reg[17] ignores exact_map
+WARNING: cell lb_en_reg_reg[18] ignores exact_map
+WARNING: cell lb_en_reg_reg[19] ignores exact_map
+WARNING: cell lb_en_reg_reg[20] ignores exact_map
+WARNING: cell lb_en_reg_reg[21] ignores exact_map
+WARNING: cell lb_en_reg_reg[22] ignores exact_map
+WARNING: cell lb_en_reg_reg[23] ignores exact_map
+WARNING: cell lb_en_reg_reg[24] ignores exact_map
+WARNING: cell lb_en_reg_reg[25] ignores exact_map
+WARNING: cell lb_en_reg_reg[26] ignores exact_map
+WARNING: cell lb_en_reg_reg[27] ignores exact_map
+WARNING: cell lb_en_reg_reg[28] ignores exact_map
+WARNING: cell lb_en_reg_reg[29] ignores exact_map
+WARNING: cell lb_en_reg_reg[30] ignores exact_map
+WARNING: cell lb_en_reg_reg[31] ignores exact_map
+WARNING: cell lb_en_reg_reg[7] ignores exact_map
+WARNING: cell lb_en_reg_reg[6] ignores exact_map
+WARNING: cell lb_en_reg_reg[5] ignores exact_map
+WARNING: cell lb_en_reg_reg[4] ignores exact_map
+WARNING: cell lb_en_reg_reg[3] ignores exact_map
+WARNING: cell lb_en_reg_reg[2] ignores exact_map
+WARNING: cell lb_en_reg_reg[1] ignores exact_map
+WARNING: cell lb_en_reg_reg[0] ignores exact_map
+WARNING: cell lb_cnt_reg[1] ignores exact_map
+WARNING: cell lb_cnt_reg[2] ignores exact_map
+WARNING: cell wl_decoded_reg[31] ignores exact_map
+WARNING: cell wl_decoded_reg[30] ignores exact_map
+WARNING: cell wl_decoded_reg[29] ignores exact_map
+WARNING: cell wl_decoded_reg[28] ignores exact_map
+WARNING: cell wl_decoded_reg[27] ignores exact_map
+WARNING: cell wl_decoded_reg[26] ignores exact_map
+WARNING: cell wl_decoded_reg[25] ignores exact_map
+WARNING: cell wl_decoded_reg[24] ignores exact_map
+WARNING: cell wl_decoded_reg[23] ignores exact_map
+WARNING: cell wl_decoded_reg[22] ignores exact_map
+WARNING: cell wl_decoded_reg[21] ignores exact_map
+WARNING: cell wl_decoded_reg[20] ignores exact_map
+WARNING: cell wl_decoded_reg[19] ignores exact_map
+WARNING: cell wl_decoded_reg[18] ignores exact_map
+WARNING: cell wl_decoded_reg[17] ignores exact_map
+WARNING: cell wl_decoded_reg[16] ignores exact_map
+WARNING: cell wl_decoded_reg[15] ignores exact_map
+WARNING: cell wl_decoded_reg[14] ignores exact_map
+WARNING: cell wl_decoded_reg[13] ignores exact_map
+WARNING: cell wl_decoded_reg[12] ignores exact_map
+WARNING: cell wl_decoded_reg[11] ignores exact_map
+WARNING: cell wl_decoded_reg[10] ignores exact_map
+WARNING: cell wl_decoded_reg[9] ignores exact_map
+WARNING: cell wl_decoded_reg[8] ignores exact_map
+WARNING: cell wl_decoded_reg[7] ignores exact_map
+WARNING: cell wl_decoded_reg[6] ignores exact_map
+WARNING: cell wl_decoded_reg[5] ignores exact_map
+WARNING: cell wl_decoded_reg[4] ignores exact_map
+WARNING: cell wl_decoded_reg[3] ignores exact_map
+WARNING: cell wl_decoded_reg[2] ignores exact_map
+WARNING: cell wl_decoded_reg[1] ignores exact_map
+WARNING: cell wl_decoded_reg[0] ignores exact_map
+WARNING: cell bl_decoded_reg[63] ignores exact_map
+WARNING: cell bl_decoded_reg[62] ignores exact_map
+WARNING: cell bl_decoded_reg[61] ignores exact_map
+WARNING: cell bl_decoded_reg[60] ignores exact_map
+WARNING: cell bl_decoded_reg[59] ignores exact_map
+WARNING: cell bl_decoded_reg[58] ignores exact_map
+WARNING: cell bl_decoded_reg[57] ignores exact_map
+WARNING: cell bl_decoded_reg[56] ignores exact_map
+WARNING: cell bl_decoded_reg[55] ignores exact_map
+WARNING: cell bl_decoded_reg[54] ignores exact_map
+WARNING: cell bl_decoded_reg[53] ignores exact_map
+WARNING: cell bl_decoded_reg[52] ignores exact_map
+WARNING: cell bl_decoded_reg[51] ignores exact_map
+WARNING: cell bl_decoded_reg[50] ignores exact_map
+WARNING: cell bl_decoded_reg[49] ignores exact_map
+WARNING: cell bl_decoded_reg[48] ignores exact_map
+WARNING: cell bl_decoded_reg[47] ignores exact_map
+WARNING: cell bl_decoded_reg[46] ignores exact_map
+WARNING: cell bl_decoded_reg[45] ignores exact_map
+WARNING: cell bl_decoded_reg[44] ignores exact_map
+WARNING: cell bl_decoded_reg[43] ignores exact_map
+WARNING: cell bl_decoded_reg[42] ignores exact_map
+WARNING: cell bl_decoded_reg[41] ignores exact_map
+WARNING: cell bl_decoded_reg[40] ignores exact_map
+WARNING: cell bl_decoded_reg[39] ignores exact_map
+WARNING: cell bl_decoded_reg[38] ignores exact_map
+WARNING: cell bl_decoded_reg[37] ignores exact_map
+WARNING: cell bl_decoded_reg[36] ignores exact_map
+WARNING: cell bl_decoded_reg[35] ignores exact_map
+WARNING: cell bl_decoded_reg[34] ignores exact_map
+WARNING: cell bl_decoded_reg[33] ignores exact_map
+WARNING: cell bl_decoded_reg[32] ignores exact_map
+WARNING: cell bl_decoded_reg[31] ignores exact_map
+WARNING: cell bl_decoded_reg[30] ignores exact_map
+WARNING: cell bl_decoded_reg[29] ignores exact_map
+WARNING: cell bl_decoded_reg[28] ignores exact_map
+WARNING: cell bl_decoded_reg[27] ignores exact_map
+WARNING: cell bl_decoded_reg[26] ignores exact_map
+WARNING: cell bl_decoded_reg[25] ignores exact_map
+WARNING: cell bl_decoded_reg[24] ignores exact_map
+WARNING: cell bl_decoded_reg[23] ignores exact_map
+WARNING: cell bl_decoded_reg[22] ignores exact_map
+WARNING: cell bl_decoded_reg[21] ignores exact_map
+WARNING: cell bl_decoded_reg[20] ignores exact_map
+WARNING: cell bl_decoded_reg[19] ignores exact_map
+WARNING: cell bl_decoded_reg[18] ignores exact_map
+WARNING: cell bl_decoded_reg[17] ignores exact_map
+WARNING: cell bl_decoded_reg[16] ignores exact_map
+WARNING: cell bl_decoded_reg[15] ignores exact_map
+WARNING: cell bl_decoded_reg[14] ignores exact_map
+WARNING: cell bl_decoded_reg[13] ignores exact_map
+WARNING: cell bl_decoded_reg[12] ignores exact_map
+WARNING: cell bl_decoded_reg[11] ignores exact_map
+WARNING: cell bl_decoded_reg[10] ignores exact_map
+WARNING: cell bl_decoded_reg[9] ignores exact_map
+WARNING: cell bl_decoded_reg[8] ignores exact_map
+WARNING: cell bl_decoded_reg[7] ignores exact_map
+WARNING: cell bl_decoded_reg[6] ignores exact_map
+WARNING: cell bl_decoded_reg[5] ignores exact_map
+WARNING: cell bl_decoded_reg[4] ignores exact_map
+WARNING: cell bl_decoded_reg[3] ignores exact_map
+WARNING: cell bl_decoded_reg[2] ignores exact_map
+WARNING: cell bl_decoded_reg[1] ignores exact_map
+WARNING: cell bl_decoded_reg[0] ignores exact_map
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Mapping 'Control_DW_cmp_0'
+  Mapping 'Control_DW_cmp_1'
+  Mapping 'Control_DW_cmp_2'
+  Mapping 'Control_DW_cmp_3'
+  Mapping 'Control_DW_cmp_4'
+  Mapping 'Control_DW_cmp_5'
+  Mapping 'Control_DW_cmp_6'
+  Mapping 'Control_DW_cmp_7'
+  Mapping 'Control_DW_cmp_8'
+  Mapping 'Control_DW_cmp_9'
+  Mapping 'Control_DW_cmp_10'
+  Mapping 'Control_DW_cmp_11'
+  Mapping 'Control_DW_cmp_12'
+  Mapping 'Control_DW_cmp_13'
+  Mapping 'Control_DW_cmp_14'
+  Mapping 'Control_DW_cmp_16'
+  Mapping 'Control_DW_cmp_17'
+  Mapping 'Control_DW_cmp_18'
+  Mapping 'Control_DW_cmp_19'
+  Mapping 'Control_DW_cmp_20'
+  Mapping 'Control_DW_cmp_21'
+  Mapping 'Control_DW_cmp_22'
+  Mapping 'Control_DW_cmp_23'
+  Mapping 'Control_DW_cmp_24'
+  Mapping 'Control_DW_cmp_25'
+  Mapping 'Control_DW_cmp_26'
+  Mapping 'Control_DW_cmp_27'
+  Mapping 'Control_DW_cmp_28'
+  Mapping 'Control_DW_cmp_29'
+  Mapping 'Control_DW_cmp_30'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+Information: Added key list 'DesignWare' to design 'Control'. (DDB-72)
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01   14357.2      0.00       0.0      92.6                          
+    0:00:01   14357.2      0.00       0.0      92.6                          
+    0:00:01   14357.2      0.00       0.0      92.6                          
+    0:00:01   14357.2      0.00       0.0      92.6                          
+    0:00:01   14357.2      0.00       0.0      92.6                          
+    0:00:01   12719.6      0.00       0.0      88.4                          
+    0:00:01   12719.6      0.00       0.0      88.4                          
+    0:00:01   12719.6      0.00       0.0      88.4                          
+    0:00:01   12719.6      0.00       0.0      88.4                          
+    0:00:01   12719.6      0.00       0.0      88.4                          
+    0:00:01   12719.6      0.00       0.0      88.4                          
+    0:00:01   12719.6      0.00       0.0      88.4                          
+    0:00:01   12719.6      0.00       0.0      88.4                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01   12719.6      0.00       0.0      88.4                          
+    0:00:01   12719.6      0.00       0.0      88.4                          
+    0:00:01   12719.6      0.00       0.0      88.4                          
+
+
+  Beginning Design Rule Fixing  (min_capacitance)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01   12719.6      0.00       0.0      88.4                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01   12719.6      0.00       0.0      88.4                          
+    0:00:01   12719.6      0.00       0.0      88.4                          
+    0:00:01   12699.8      0.00       0.0      88.4                          
+    0:00:01   12691.0      0.00       0.0      88.4                          
+    0:00:01   12691.0      0.00       0.0      88.4                          
+    0:00:01   12691.0      0.00       0.0      88.4                          
+    0:00:01   12691.0      0.00       0.0      88.4                          
+    0:00:01   12691.0      0.00       0.0      88.4                          
+    0:00:01   12691.0      0.00       0.0      88.4                          
+    0:00:01   12691.0      0.00       0.0      88.4                          
+    0:00:01   12691.0      0.00       0.0      88.4                          
+    0:00:01   12691.0      0.00       0.0      88.4                          
+    0:00:01   12691.0      0.00       0.0      88.4                          
+Loading db file '/tools/kits/tower/TS18PM_1/tsl18fs190svt_Rev_2019.09/lib/db/tsl18fs190svt_tt_1p8v_25c.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Writing verilog file '/users/epkgms/Desktop/khaled/final_controlblock/Control_syn.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+============================================================
+SYNTHESIS FINISHED SUCCESSFULLY
+Generated netlist: Control_syn.v
+Reports folder: reports/
+Top module: Control
+Clock port: clk
+============================================================
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : Control
+Version: R-2020.09-SP2
+Date   : Wed Nov 11 16:11:27 2026
+****************************************
+
+
+   min_capacitance
+
+                             Required        Actual
+   Net                      Capacitance    Capacitance       Slack
+   -----------------------------------------------------------------
+   BL_S[0]                      0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[1]                      0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[2]                      0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[3]                      0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[4]                      0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[5]                      0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[6]                      0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[7]                      0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[8]                      0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[9]                      0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[10]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[11]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[12]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[13]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[14]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[15]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[16]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[17]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[18]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[19]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[20]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[21]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[22]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[23]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[24]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[25]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[26]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[27]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[28]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[29]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[30]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[31]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[32]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[33]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[34]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[35]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[36]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[37]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[38]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[39]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[40]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[41]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[42]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[43]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[44]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[45]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[46]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[47]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[48]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[49]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[50]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[51]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[52]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[53]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[54]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[55]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[56]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[57]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[58]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[59]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[60]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[61]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[62]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_S[63]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   BL_Zero                      0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[0]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[1]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[2]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[3]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[4]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[5]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[6]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[7]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[8]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[9]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[10]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[11]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[12]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[13]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[14]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[15]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[16]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[17]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[18]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[19]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[20]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[21]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[22]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[23]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[24]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[25]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[26]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[27]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[28]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[29]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[30]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   LB_en[31]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[0]                      0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[1]                      0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[2]                      0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[3]                      0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[4]                      0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[5]                      0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[6]                      0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[7]                      0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[8]                      0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[9]                      0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[10]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[11]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[12]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[13]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[14]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[15]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[16]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[17]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[18]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[19]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[20]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[21]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[22]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[23]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[24]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[25]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[26]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[27]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[28]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[29]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[30]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   WL_S[31]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+
+   -----------------------------------------------------------------
+   Total                      129                -0.17  
+
+
+Memory usage for this session 185 Mbytes.
+Memory usage for this session including child processes 185 Mbytes.
+CPU usage for this session 2 seconds ( 0.00 hours ).
+Elapsed time for this session 3 seconds ( 0.00 hours ).
+
+Thank you...
