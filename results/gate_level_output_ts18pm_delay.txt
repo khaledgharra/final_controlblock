@@ -1,0 +1,160 @@
+TOOL:	xrun(64)	24.03-s004: Started on Nov 11, 2026 at 16:15:06 IST
+xrun(64): 24.03-s004: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+file: Control_syn.v
+	module worklib.Control:v
+		errors: 0, warnings: 0
+file: tb_Control_gl.sv
+	module worklib.tb_Control:sv
+		errors: 0, warnings: 0
+file: /tools/kits/tower/TS18PM_1/tsl18fs190svt_Rev_2019.09/lib/verilog/tsl18fs190svt.v
+	module tsl18fs190svt.AOI21_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.AOI22_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.AOI31_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.AOI32_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.BUF_X2_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.CLKINV_X1_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.CLKNAND2_X2_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.DFFRQ_X2_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.DFFSQ_X2_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.INV_A_NAND2_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.INV_A_NAND3_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.INV_A_NOR2_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.INV_A_NOR3_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.INV_A_OAI211_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.INV_B_AOI21_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.INV_X2_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.MUXI2D_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.MUX2_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.NAND2_A_NOR3_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.NAND2_X2_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.NAND3T_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.NAND4T_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.NAND4_X2_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.NOR2_A_AOI21_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.NOR2_A_NOR2_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.NOR2P3_X1_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.NOR3_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.NOR4_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.OAI12P2_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.OAI22_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.OAI31_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.OAI211_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.OAI221_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.OA21_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.OR2_X1_18_SVT:v
+		errors: 0, warnings: 0
+file: /tools/kits/tower/TS18PM_1/tsl18fs190svt_Rev_2019.09/lib/verilog/tsl18fs190svt_udp.v
+	primitive tsl18fs190svt_udp.seq_DFFRQ_X2_18_SVT:v
+		errors: 0, warnings: 0
+	primitive tsl18fs190svt_udp.seq_DFFSQ_X2_18_SVT:v
+		errors: 0, warnings: 0
+	primitive tsl18fs190svt_udp.ng_xbuf:v
+		errors: 0, warnings: 0
+		Caching library 'tsl18fs190svt' ....... Done
+		Caching library 'tsl18fs190svt_udp' ....... Done
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		tb_Control
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.Control:v <0x5208d144>
+			streams:   0, words:     0
+		worklib.tb_Control:sv <0x384c4bba>
+			streams:  22, words: 31017
+		tsl18fs190svt.AOI22_X0_18_SVT:v <0x1514031f>
+			streams:   0, words:     0
+		tsl18fs190svt.NOR2_A_NOR2_X0_18_SVT:v <0x07b78acb>
+			streams:   0, words:     0
+		tsl18fs190svt.OAI22_X0_18_SVT:v <0x1bec1d95>
+			streams:   0, words:     0
+		tsl18fs190svt.AOI31_X0_18_SVT:v <0x36079e90>
+			streams:   0, words:     0
+		tsl18fs190svt.AOI21_X0_18_SVT:v <0x261bb802>
+			streams:   0, words:     0
+		tsl18fs190svt.OAI221_X0_18_SVT:v <0x5e3efa7e>
+			streams:   0, words:     0
+		tsl18fs190svt.NOR2_A_AOI21_X0_18_SVT:v <0x34698850>
+			streams:   0, words:     0
+		tsl18fs190svt.INV_B_AOI21_X0_18_SVT:v <0x6d889afd>
+			streams:   0, words:     0
+		tsl18fs190svt.OA21_X0_18_SVT:v <0x5095f9db>
+			streams:   0, words:     0
+		tsl18fs190svt.MUX2_X0_18_SVT:v <0x7672d31e>
+			streams:   0, words:     0
+		tsl18fs190svt.AOI32_X0_18_SVT:v <0x7068af98>
+			streams:   0, words:     0
+		tsl18fs190svt.INV_A_OAI211_X0_18_SVT:v <0x02617059>
+			streams:   0, words:     0
+		tsl18fs190svt.OAI12P2_X0_18_SVT:v <0x3409acd2>
+			streams:   0, words:     0
+		tsl18fs190svt.OAI211_X0_18_SVT:v <0x32c81ea9>
+			streams:   0, words:     0
+		tsl18fs190svt.OAI31_X0_18_SVT:v <0x70c58bd7>
+			streams:   0, words:     0
+		tsl18fs190svt.MUXI2D_X0_18_SVT:v <0x3ef91e69>
+			streams:   0, words:     0
+		tsl18fs190svt.DFFRQ_X2_18_SVT:v <0x02c11888>
+			streams:   0, words:     0
+		tsl18fs190svt.DFFSQ_X2_18_SVT:v <0x469b3bcc>
+			streams:   0, words:     0
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                   Instances  Unique
+		Modules:                 732      37
+		UDPs:                    308       3
+		Primitives:            2,043       4
+		Timing outputs:          730      35
+		Registers:               189      39
+		Scalar wires:            893       -
+		Expanded wires:          131       4
+		Always blocks:             1       1
+		Initial blocks:            4       4
+		Cont. assignments:         0       1
+		Pseudo assignments:       11       -
+		Timing checks:         1,386     310
+		Simulation timescale:    1ps
+	Writing initial simulation snapshot: worklib.tb_Control:sv
+Loading snapshot worklib.tb_Control:sv .................... Done
+xcelium> source /eda/cadence/2024-25/RHELx86/XCELIUM_24.03.004/tools/xcelium/files/xmsimrc
+xcelium> run
+=== ALL 282 CHECKS PASSED ===
+Simulation complete via $finish(1) at time 9140 NS + 0
+./tb_Control_gl.sv:176         $finish;
+xcelium> exit
+TOOL:	xrun(64)	24.03-s004: Exiting on Nov 11, 2026 at 16:15:06 IST  (total: 00:00:00)

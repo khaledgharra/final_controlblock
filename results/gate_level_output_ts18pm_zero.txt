@@ -1,0 +1,74 @@
+TOOL:	xrun(64)	24.03-s004: Started on Nov 11, 2026 at 16:14:27 IST
+xrun(64): 24.03-s004: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+		Caching library 'tsl18fs190svt' ....... Done
+		Caching library 'tsl18fs190svt_udp' ....... Done
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		tb_Control
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.Control:v <0x7ed3392c>
+			streams:   0, words:     0
+		worklib.tb_Control:sv <0x39756a4b>
+			streams:  22, words: 31017
+		tsl18fs190svt.AOI22_X0_18_SVT:v <0x510ad03c>
+			streams:   0, words:     0
+		tsl18fs190svt.NOR2_A_NOR2_X0_18_SVT:v <0x59dfdca3>
+			streams:   0, words:     0
+		tsl18fs190svt.OAI22_X0_18_SVT:v <0x5ff2ceb6>
+			streams:   0, words:     0
+		tsl18fs190svt.AOI31_X0_18_SVT:v <0x1eae4272>
+			streams:   0, words:     0
+		tsl18fs190svt.AOI21_X0_18_SVT:v <0x76737dbb>
+			streams:   0, words:     0
+		tsl18fs190svt.OAI221_X0_18_SVT:v <0x3d260c94>
+			streams:   0, words:     0
+		tsl18fs190svt.NOR2_A_AOI21_X0_18_SVT:v <0x1137ecfd>
+			streams:   0, words:     0
+		tsl18fs190svt.INV_B_AOI21_X0_18_SVT:v <0x3de05f44>
+			streams:   0, words:     0
+		tsl18fs190svt.OA21_X0_18_SVT:v <0x77670cd3>
+			streams:   0, words:     0
+		tsl18fs190svt.MUX2_X0_18_SVT:v <0x2773c3e3>
+			streams:   0, words:     0
+		tsl18fs190svt.AOI32_X0_18_SVT:v <0x54c114b9>
+			streams:   0, words:     0
+		tsl18fs190svt.INV_A_OAI211_X0_18_SVT:v <0x71d98a12>
+			streams:   0, words:     0
+		tsl18fs190svt.OAI12P2_X0_18_SVT:v <0x6461696b>
+			streams:   0, words:     0
+		tsl18fs190svt.OAI211_X0_18_SVT:v <0x1502b7c7>
+			streams:   0, words:     0
+		tsl18fs190svt.OAI31_X0_18_SVT:v <0x586c5735>
+			streams:   0, words:     0
+		tsl18fs190svt.MUXI2D_X0_18_SVT:v <0x1775bb8e>
+			streams:   0, words:     0
+		tsl18fs190svt.DFFRQ_X2_18_SVT:v <0x476c7da5>
+			streams:   0, words:     0
+		tsl18fs190svt.DFFSQ_X2_18_SVT:v <0x03365ee1>
+			streams:   0, words:     0
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                   Instances  Unique
+		Modules:                 732      37
+		UDPs:                    308       3
+		Primitives:            2,043       4
+		Registers:               189      39
+		Scalar wires:            164       -
+		Expanded wires:          131       4
+		Always blocks:             1       1
+		Initial blocks:            4       4
+		Cont. assignments:         0       1
+		Pseudo assignments:       11       -
+		Simulation timescale:    1ps
+	Writing initial simulation snapshot: worklib.tb_Control:sv
+Loading snapshot worklib.tb_Control:sv .................... Done
+xcelium> source /eda/cadence/2024-25/RHELx86/XCELIUM_24.03.004/tools/xcelium/files/xmsimrc
+xcelium> run
+=== ALL 282 CHECKS PASSED ===
+Simulation complete via $finish(1) at time 9140 NS + 0
+./tb_Control.sv:176         $finish;
+xcelium> exit
+TOOL:	xrun(64)	24.03-s004: Exiting on Nov 11, 2026 at 16:14:28 IST  (total: 00:00:01)
