@@ -3,7 +3,7 @@
 Report : area
 Design : Control
 Version: R-2020.09-SP2
-Date   : Wed Nov 11 16:11:27 2026
+Date   : Wed Nov 11 16:23:38 2026
 ****************************************
 
 Library(s) Used:
@@ -11,20 +11,20 @@ Library(s) Used:
     tsl18fs190svt_tt_1p8v_25c (File: /tools/kits/tower/TS18PM_1/tsl18fs190svt_Rev_2019.09/lib/db/tsl18fs190svt_tt_1p8v_25c.db)
 
 Number of ports:                          138
-Number of nets:                           736
-Number of cells:                          730
-Number of combinational cells:            576
+Number of nets:                           737
+Number of cells:                          731
+Number of combinational cells:            577
 Number of sequential cells:               154
 Number of macros/black boxes:               0
-Number of buf/inv:                        181
+Number of buf/inv:                        182
 Number of references:                      35
 
-Combinational area:               5719.229961
-Buf/Inv area:                     1234.400020
+Combinational area:               5728.009961
+Buf/Inv area:                     1243.180019
 Noncombinational area:            6971.799942
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (No wire load specified)
 
-Total cell area:                 12691.029903
+Total cell area:                 12699.809903
 Total area:                 undefined
 1

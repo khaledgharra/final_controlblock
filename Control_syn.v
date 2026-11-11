@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////
 // Created by: Synopsys DC Expert(TM) in wire load mode
 // Version   : R-2020.09-SP2
-// Date      : Wed Nov 11 16:11:27 2026
+// Date      : Wed Nov 11 16:23:39 2026
 /////////////////////////////////////////////////////////////
 
 
@@ -53,7 +53,7 @@ module Control ( clk, rst_n, S_Ain_c, Mode, WL_Enable, WL_Zero, BL_Enable,
          n727, n728, n729, n730, n731, n732, n733, n734, n735, n736, n737,
          n738, n739, n740, n741, n742, n743, n744, n745, n746, n747, n748,
          n749, n750, n751, n752, n753, n754, n755, n756, n757, n758, n759,
-         n760, n761, n762, n763, n764, n765, n766, n767;
+         n760, n761, n762, n763, n764, n765, n766, n767, n768;
   wire   [4:1] next_wl_addr;
   wire   [5:1] next_bl_addr;
   wire   [4:1] next_lb_code;
@@ -258,38 +258,16 @@ module Control ( clk, rst_n, S_Ain_c, Mode, WL_Enable, WL_Zero, BL_Enable,
         bl_decoded[1]) );
   DFFSQ_X2_18_SVT \bl_decoded_reg[0]  ( .D(n320), .CK(clk), .SN(rst_n), .Q(
         bl_decoded[0]) );
-  DFFRQ_X2_18_SVT \lb_en_reg_reg[8]  ( .D(n449), .CK(clk), .RN(rst_n), .Q(
-        lb_en_reg[8]) );
-  DFFRQ_X2_18_SVT \lb_en_reg_reg[16]  ( .D(n441), .CK(clk), .RN(rst_n), .Q(
-        lb_en_reg[16]) );
-  DFFRQ_X2_18_SVT \lb_en_reg_reg[22]  ( .D(n435), .CK(clk), .RN(rst_n), .Q(
-        lb_en_reg[22]) );
-  DFFRQ_X2_18_SVT \lb_en_reg_reg[4]  ( .D(n422), .CK(clk), .RN(rst_n), .Q(
-        lb_en_reg[4]) );
-  DFFRQ_X2_18_SVT \lb_en_reg_reg[12]  ( .D(n445), .CK(clk), .RN(rst_n), .Q(
-        lb_en_reg[12]) );
-  DFFRQ_X2_18_SVT \lb_en_reg_reg[15]  ( .D(n442), .CK(clk), .RN(rst_n), .Q(
-        lb_en_reg[15]) );
-  DFFRQ_X2_18_SVT \lb_en_reg_reg[20]  ( .D(n437), .CK(clk), .RN(rst_n), .Q(
-        lb_en_reg[20]) );
-  DFFRQ_X2_18_SVT \lb_en_reg_reg[21]  ( .D(n436), .CK(clk), .RN(rst_n), .Q(
-        lb_en_reg[21]) );
-  DFFRQ_X2_18_SVT \lb_en_reg_reg[24]  ( .D(n433), .CK(clk), .RN(rst_n), .Q(
-        lb_en_reg[24]) );
-  DFFRQ_X2_18_SVT \lb_en_reg_reg[28]  ( .D(n429), .CK(clk), .RN(rst_n), .Q(
-        lb_en_reg[28]) );
-  DFFRQ_X2_18_SVT \lb_en_reg_reg[0]  ( .D(n418), .CK(clk), .RN(rst_n), .Q(
-        lb_en_reg[0]) );
-  DFFRQ_X2_18_SVT \lb_en_reg_reg[29]  ( .D(n428), .CK(clk), .RN(rst_n), .Q(
-        lb_en_reg[29]) );
-  DFFRQ_X2_18_SVT \lb_en_reg_reg[30]  ( .D(n427), .CK(clk), .RN(rst_n), .Q(
-        lb_en_reg[30]) );
-  DFFRQ_X2_18_SVT \lb_en_reg_reg[31]  ( .D(n426), .CK(clk), .RN(rst_n), .Q(
-        lb_en_reg[31]) );
-  DFFRQ_X2_18_SVT \lb_en_reg_reg[2]  ( .D(n420), .CK(clk), .RN(rst_n), .Q(
-        lb_en_reg[2]) );
-  DFFRQ_X2_18_SVT \lb_en_reg_reg[1]  ( .D(n419), .CK(clk), .RN(rst_n), .Q(
-        lb_en_reg[1]) );
+  DFFRQ_X2_18_SVT \wl_shift_reg_reg[1]  ( .D(n457), .CK(clk), .RN(rst_n), .Q(
+        next_wl_addr[2]) );
+  DFFRQ_X2_18_SVT \wl_shift_reg_reg[0]  ( .D(n458), .CK(clk), .RN(rst_n), .Q(
+        next_wl_addr[1]) );
+  DFFRQ_X2_18_SVT \LB_SR_reg[0]  ( .D(n462), .CK(clk), .RN(rst_n), .Q(
+        next_lb_code[1]) );
+  DFFRQ_X2_18_SVT \LB_SR_reg[1]  ( .D(n461), .CK(clk), .RN(rst_n), .Q(
+        next_lb_code[2]) );
+  DFFRQ_X2_18_SVT \LB_SR_reg[2]  ( .D(n460), .CK(clk), .RN(rst_n), .Q(
+        next_lb_code[3]) );
   DFFRQ_X2_18_SVT \lb_en_reg_reg[9]  ( .D(n448), .CK(clk), .RN(rst_n), .Q(
         lb_en_reg[9]) );
   DFFRQ_X2_18_SVT \lb_en_reg_reg[10]  ( .D(n447), .CK(clk), .RN(rst_n), .Q(
@@ -322,18 +300,40 @@ module Control ( clk, rst_n, S_Ain_c, Mode, WL_Enable, WL_Zero, BL_Enable,
         lb_en_reg[5]) );
   DFFRQ_X2_18_SVT \lb_en_reg_reg[3]  ( .D(n421), .CK(clk), .RN(rst_n), .Q(
         lb_en_reg[3]) );
-  DFFRQ_X2_18_SVT \wl_shift_reg_reg[1]  ( .D(n457), .CK(clk), .RN(rst_n), .Q(
-        next_wl_addr[2]) );
-  DFFRQ_X2_18_SVT \wl_shift_reg_reg[0]  ( .D(n458), .CK(clk), .RN(rst_n), .Q(
-        next_wl_addr[1]) );
-  DFFRQ_X2_18_SVT \LB_SR_reg[0]  ( .D(n462), .CK(clk), .RN(rst_n), .Q(
-        next_lb_code[1]) );
-  DFFRQ_X2_18_SVT \LB_SR_reg[1]  ( .D(n461), .CK(clk), .RN(rst_n), .Q(
-        next_lb_code[2]) );
-  DFFRQ_X2_18_SVT \LB_SR_reg[2]  ( .D(n460), .CK(clk), .RN(rst_n), .Q(
-        next_lb_code[3]) );
   DFFRQ_X2_18_SVT \wl_shift_reg_reg[2]  ( .D(n456), .CK(clk), .RN(rst_n), .Q(
         next_wl_addr[3]) );
+  DFFRQ_X2_18_SVT \lb_en_reg_reg[2]  ( .D(n420), .CK(clk), .RN(rst_n), .Q(
+        lb_en_reg[2]) );
+  DFFRQ_X2_18_SVT \lb_en_reg_reg[1]  ( .D(n419), .CK(clk), .RN(rst_n), .Q(
+        lb_en_reg[1]) );
+  DFFRQ_X2_18_SVT \lb_en_reg_reg[29]  ( .D(n428), .CK(clk), .RN(rst_n), .Q(
+        lb_en_reg[29]) );
+  DFFRQ_X2_18_SVT \lb_en_reg_reg[30]  ( .D(n427), .CK(clk), .RN(rst_n), .Q(
+        lb_en_reg[30]) );
+  DFFRQ_X2_18_SVT \lb_en_reg_reg[31]  ( .D(n426), .CK(clk), .RN(rst_n), .Q(
+        lb_en_reg[31]) );
+  DFFRQ_X2_18_SVT \lb_en_reg_reg[8]  ( .D(n449), .CK(clk), .RN(rst_n), .Q(
+        lb_en_reg[8]) );
+  DFFRQ_X2_18_SVT \lb_en_reg_reg[12]  ( .D(n445), .CK(clk), .RN(rst_n), .Q(
+        lb_en_reg[12]) );
+  DFFRQ_X2_18_SVT \lb_en_reg_reg[15]  ( .D(n442), .CK(clk), .RN(rst_n), .Q(
+        lb_en_reg[15]) );
+  DFFRQ_X2_18_SVT \lb_en_reg_reg[16]  ( .D(n441), .CK(clk), .RN(rst_n), .Q(
+        lb_en_reg[16]) );
+  DFFRQ_X2_18_SVT \lb_en_reg_reg[20]  ( .D(n437), .CK(clk), .RN(rst_n), .Q(
+        lb_en_reg[20]) );
+  DFFRQ_X2_18_SVT \lb_en_reg_reg[21]  ( .D(n436), .CK(clk), .RN(rst_n), .Q(
+        lb_en_reg[21]) );
+  DFFRQ_X2_18_SVT \lb_en_reg_reg[22]  ( .D(n435), .CK(clk), .RN(rst_n), .Q(
+        lb_en_reg[22]) );
+  DFFRQ_X2_18_SVT \lb_en_reg_reg[24]  ( .D(n433), .CK(clk), .RN(rst_n), .Q(
+        lb_en_reg[24]) );
+  DFFRQ_X2_18_SVT \lb_en_reg_reg[28]  ( .D(n429), .CK(clk), .RN(rst_n), .Q(
+        lb_en_reg[28]) );
+  DFFRQ_X2_18_SVT \lb_en_reg_reg[4]  ( .D(n422), .CK(clk), .RN(rst_n), .Q(
+        lb_en_reg[4]) );
+  DFFRQ_X2_18_SVT \lb_en_reg_reg[0]  ( .D(n418), .CK(clk), .RN(rst_n), .Q(
+        lb_en_reg[0]) );
   DFFRQ_X2_18_SVT \LB_SR_reg[3]  ( .D(n459), .CK(clk), .RN(rst_n), .Q(N1183)
          );
   DFFRQ_X2_18_SVT \wl_shift_reg_reg[3]  ( .D(n455), .CK(clk), .RN(rst_n), .Q(
@@ -350,13 +350,13 @@ module Control ( clk, rst_n, S_Ain_c, Mode, WL_Enable, WL_Zero, BL_Enable,
         wl_cnt[2]) );
   DFFRQ_X2_18_SVT \bl_shift_reg_reg[4]  ( .D(n467), .CK(clk), .RN(rst_n), .Q(
         next_bl_addr[5]) );
-  DFFRQ_X2_18_SVT \wl_cnt_reg[1]  ( .D(n766), .CK(clk), .RN(rst_n), .Q(
+  DFFRQ_X2_18_SVT \wl_cnt_reg[1]  ( .D(n767), .CK(clk), .RN(rst_n), .Q(
         wl_cnt[1]) );
   DFFRQ_X2_18_SVT \wl_cnt_reg[0]  ( .D(n451), .CK(clk), .RN(rst_n), .Q(
         wl_cnt[0]) );
   DFFRQ_X2_18_SVT \lb_cnt_reg[2]  ( .D(n416), .CK(clk), .RN(rst_n), .Q(
         lb_cnt[2]) );
-  DFFRQ_X2_18_SVT \lb_cnt_reg[1]  ( .D(n767), .CK(clk), .RN(rst_n), .Q(
+  DFFRQ_X2_18_SVT \lb_cnt_reg[1]  ( .D(n768), .CK(clk), .RN(rst_n), .Q(
         lb_cnt[1]) );
   DFFRQ_X2_18_SVT \lb_cnt_reg[0]  ( .D(n473), .CK(clk), .RN(rst_n), .Q(
         lb_cnt[0]) );
@@ -366,43 +366,43 @@ module Control ( clk, rst_n, S_Ain_c, Mode, WL_Enable, WL_Zero, BL_Enable,
         bl_cnt[0]) );
   DFFRQ_X2_18_SVT \bl_cnt_reg[1]  ( .D(n464), .CK(clk), .RN(rst_n), .Q(
         bl_cnt[1]) );
-  DFFRQ_X2_18_SVT \current_state_reg[1]  ( .D(n466), .CK(clk), .RN(rst_n), .Q(
-        current_state[1]) );
-  DFFRQ_X2_18_SVT \current_state_reg[0]  ( .D(n472), .CK(clk), .RN(rst_n), .Q(
-        current_state[0]) );
   DFFRQ_X2_18_SVT \current_state_reg[3]  ( .D(n465), .CK(clk), .RN(rst_n), .Q(
         current_state[3]) );
   DFFRQ_X2_18_SVT \current_state_reg[2]  ( .D(n463), .CK(clk), .RN(rst_n), .Q(
         current_state[2]) );
-  NAND2_X2_18_SVT U576 ( .A(WL_Enable), .B(n763), .Q(n475) );
-  BUF_X2_18_SVT U577 ( .A(n494), .Q(n492) );
-  BUF_X2_18_SVT U578 ( .A(n495), .Q(n491) );
-  BUF_X2_18_SVT U579 ( .A(n495), .Q(n490) );
-  BUF_X2_18_SVT U580 ( .A(n494), .Q(n493) );
-  BUF_X2_18_SVT U581 ( .A(n483), .Q(n481) );
-  BUF_X2_18_SVT U582 ( .A(n484), .Q(n480) );
-  BUF_X2_18_SVT U583 ( .A(n484), .Q(n479) );
-  BUF_X2_18_SVT U584 ( .A(n483), .Q(n482) );
-  BUF_X2_18_SVT U585 ( .A(n765), .Q(n494) );
-  BUF_X2_18_SVT U586 ( .A(n765), .Q(n495) );
-  BUF_X2_18_SVT U587 ( .A(n496), .Q(n489) );
-  BUF_X2_18_SVT U588 ( .A(n765), .Q(n496) );
+  DFFRQ_X2_18_SVT \current_state_reg[1]  ( .D(n466), .CK(clk), .RN(rst_n), .Q(
+        current_state[1]) );
+  DFFRQ_X2_18_SVT \current_state_reg[0]  ( .D(n472), .CK(clk), .RN(rst_n), .Q(
+        current_state[0]) );
+  BUF_X2_18_SVT U576 ( .A(n494), .Q(n492) );
+  BUF_X2_18_SVT U577 ( .A(n495), .Q(n491) );
+  BUF_X2_18_SVT U578 ( .A(n495), .Q(n490) );
+  BUF_X2_18_SVT U579 ( .A(n494), .Q(n493) );
+  BUF_X2_18_SVT U580 ( .A(n766), .Q(n494) );
+  BUF_X2_18_SVT U581 ( .A(n766), .Q(n495) );
+  BUF_X2_18_SVT U582 ( .A(n496), .Q(n489) );
+  BUF_X2_18_SVT U583 ( .A(n766), .Q(n496) );
+  BUF_X2_18_SVT U584 ( .A(n763), .Q(n477) );
+  BUF_X2_18_SVT U585 ( .A(n483), .Q(n481) );
+  BUF_X2_18_SVT U586 ( .A(n484), .Q(n480) );
+  BUF_X2_18_SVT U587 ( .A(n484), .Q(n479) );
+  BUF_X2_18_SVT U588 ( .A(n483), .Q(n482) );
   BUF_X2_18_SVT U589 ( .A(n485), .Q(n478) );
   BUF_X2_18_SVT U590 ( .A(n563), .Q(n485) );
   BUF_X2_18_SVT U591 ( .A(n563), .Q(n483) );
   BUF_X2_18_SVT U592 ( .A(n563), .Q(n484) );
-  BUF_X2_18_SVT U593 ( .A(n764), .Q(n486) );
-  BUF_X2_18_SVT U594 ( .A(n764), .Q(n487) );
-  BUF_X2_18_SVT U595 ( .A(n764), .Q(n488) );
+  BUF_X2_18_SVT U593 ( .A(n765), .Q(n486) );
+  BUF_X2_18_SVT U594 ( .A(n765), .Q(n487) );
+  BUF_X2_18_SVT U595 ( .A(n765), .Q(n488) );
   NAND4_X2_18_SVT U596 ( .A(current_state[2]), .B(n508), .C(Mode[1]), .D(n762), 
         .Q(n522) );
   NAND2_X2_18_SVT U597 ( .A(n511), .B(N1183), .Q(n586) );
   INV_X2_18_SVT U598 ( .A(S_Ain_c), .Q(n520) );
-  CLKNAND2_X2_18_SVT U599 ( .A(n478), .B(n578), .Q(n476) );
-  CLKNAND2_X2_18_SVT U600 ( .A(n478), .B(n578), .Q(n477) );
-  MUXI2D_X0_18_SVT U601 ( .A(n497), .B(n498), .S0(wl_cnt[1]), .Q(n766) );
+  CLKNAND2_X2_18_SVT U599 ( .A(n478), .B(n578), .Q(n475) );
+  CLKNAND2_X2_18_SVT U600 ( .A(n478), .B(n578), .Q(n476) );
+  MUXI2D_X0_18_SVT U601 ( .A(n497), .B(n498), .S0(wl_cnt[1]), .Q(n767) );
   CLKNAND2_X2_18_SVT U602 ( .A(wl_cnt[0]), .B(n499), .Q(n497) );
-  MUXI2D_X0_18_SVT U603 ( .A(n500), .B(n501), .S0(lb_cnt[1]), .Q(n767) );
+  MUXI2D_X0_18_SVT U603 ( .A(n500), .B(n501), .S0(lb_cnt[1]), .Q(n768) );
   CLKINV_X1_18_SVT U604 ( .A(n502), .Q(n501) );
   CLKNAND2_X2_18_SVT U605 ( .A(lb_cnt[0]), .B(n503), .Q(n500) );
   CLKINV_X1_18_SVT U606 ( .A(n504), .Q(BL_Zero) );
@@ -474,51 +474,51 @@ module Control ( clk, rst_n, S_Ain_c, Mode, WL_Enable, WL_Zero, BL_Enable,
   NAND3T_X0_18_SVT U659 ( .A(wl_cnt[0]), .B(n499), .C(wl_cnt[1]), .Q(n567) );
   CLKINV_X1_18_SVT U660 ( .A(n564), .Q(n499) );
   CLKNAND2_X2_18_SVT U661 ( .A(n556), .B(n542), .Q(n564) );
-  OAI12P2_X0_18_SVT U662 ( .A0(n477), .A1(n571), .B0(n572), .Q(n449) );
-  OAI221_X0_18_SVT U663 ( .A0(n554), .A1(n573), .B0(n476), .B1(n574), .C0(n575), .Q(n448) );
+  OAI12P2_X0_18_SVT U662 ( .A0(n476), .A1(n571), .B0(n572), .Q(n449) );
+  OAI221_X0_18_SVT U663 ( .A0(n554), .A1(n573), .B0(n475), .B1(n574), .C0(n575), .Q(n448) );
   OAI221_X0_18_SVT U664 ( .A0(n554), .A1(n576), .B0(n570), .B1(n577), .C0(n575), .Q(n447) );
   CLKINV_X1_18_SVT U665 ( .A(next_lb_code[3]), .Q(n554) );
-  OAI221_X0_18_SVT U666 ( .A0(n578), .A1(n579), .B0(n477), .B1(n580), .C0(n575), .Q(n446) );
-  OAI12P2_X0_18_SVT U667 ( .A0(n476), .A1(n581), .B0(n575), .Q(n445) );
+  OAI221_X0_18_SVT U666 ( .A0(n578), .A1(n579), .B0(n476), .B1(n580), .C0(n575), .Q(n446) );
+  OAI12P2_X0_18_SVT U667 ( .A0(n475), .A1(n581), .B0(n575), .Q(n445) );
   AOI21_X0_18_SVT U668 ( .A0(n511), .A1(n582), .B0(n583), .Q(n575) );
-  OAI221_X0_18_SVT U669 ( .A0(n584), .A1(n573), .B0(n476), .B1(n585), .C0(n586), .Q(n444) );
+  OAI221_X0_18_SVT U669 ( .A0(n584), .A1(n573), .B0(n475), .B1(n585), .C0(n586), .Q(n444) );
   OAI221_X0_18_SVT U670 ( .A0(n584), .A1(n576), .B0(n570), .B1(n587), .C0(n586), .Q(n443) );
   OAI12P2_X0_18_SVT U671 ( .A0(n570), .A1(n588), .B0(n589), .Q(n442) );
   AOI31_X0_18_SVT U672 ( .A0(n582), .A1(n511), .A2(n590), .B0(n583), .Q(n589)
          );
-  OAI12P2_X0_18_SVT U673 ( .A0(n477), .A1(n591), .B0(n586), .Q(n441) );
-  OAI221_X0_18_SVT U674 ( .A0(n592), .A1(n586), .B0(n477), .B1(n593), .C0(n594), .Q(n440) );
-  OAI221_X0_18_SVT U675 ( .A0(n552), .A1(n586), .B0(n476), .B1(n595), .C0(n594), .Q(n439) );
+  OAI12P2_X0_18_SVT U673 ( .A0(n476), .A1(n591), .B0(n586), .Q(n441) );
+  OAI221_X0_18_SVT U674 ( .A0(n592), .A1(n586), .B0(n476), .B1(n593), .C0(n594), .Q(n440) );
+  OAI221_X0_18_SVT U675 ( .A0(n552), .A1(n586), .B0(n475), .B1(n595), .C0(n594), .Q(n439) );
   OAI221_X0_18_SVT U676 ( .A0(n596), .A1(n586), .B0(n570), .B1(n597), .C0(n594), .Q(n438) );
-  OAI12P2_X0_18_SVT U677 ( .A0(n476), .A1(n598), .B0(n594), .Q(n437) );
+  OAI12P2_X0_18_SVT U677 ( .A0(n475), .A1(n598), .B0(n594), .Q(n437) );
   OR2_X1_18_SVT U678 ( .A(n599), .B(n586), .Q(n594) );
   OAI12P2_X0_18_SVT U679 ( .A0(n570), .A1(n600), .B0(n601), .Q(n436) );
   AOI31_X0_18_SVT U680 ( .A0(next_lb_code[2]), .A1(n602), .A2(n583), .B0(n603), 
         .Q(n601) );
-  OAI12P2_X0_18_SVT U681 ( .A0(n477), .A1(n604), .B0(n605), .Q(n435) );
+  OAI12P2_X0_18_SVT U681 ( .A0(n476), .A1(n604), .B0(n605), .Q(n435) );
   AOI31_X0_18_SVT U682 ( .A0(next_lb_code[2]), .A1(next_lb_code[1]), .A2(n583), 
         .B0(n603), .Q(n605) );
   CLKINV_X1_18_SVT U683 ( .A(n606), .Q(n603) );
-  OAI221_X0_18_SVT U684 ( .A0(n586), .A1(n607), .B0(n477), .B1(n608), .C0(n606), .Q(n434) );
-  OAI12P2_X0_18_SVT U685 ( .A0(n476), .A1(n609), .B0(n606), .Q(n433) );
-  OAI221_X0_18_SVT U686 ( .A0(n592), .A1(n606), .B0(n476), .B1(n610), .C0(n611), .Q(n432) );
+  OAI221_X0_18_SVT U684 ( .A0(n586), .A1(n607), .B0(n476), .B1(n608), .C0(n606), .Q(n434) );
+  OAI12P2_X0_18_SVT U685 ( .A0(n475), .A1(n609), .B0(n606), .Q(n433) );
+  OAI221_X0_18_SVT U686 ( .A0(n592), .A1(n606), .B0(n475), .B1(n610), .C0(n611), .Q(n432) );
   OAI221_X0_18_SVT U687 ( .A0(n552), .A1(n606), .B0(n570), .B1(n612), .C0(n611), .Q(n431) );
   CLKNAND2_X2_18_SVT U688 ( .A(n583), .B(next_lb_code[3]), .Q(n606) );
-  OAI221_X0_18_SVT U689 ( .A0(n579), .A1(n586), .B0(n477), .B1(n613), .C0(n611), .Q(n430) );
+  OAI221_X0_18_SVT U689 ( .A0(n579), .A1(n586), .B0(n476), .B1(n613), .C0(n611), .Q(n430) );
   CLKNAND2_X2_18_SVT U690 ( .A(n590), .B(next_lb_code[3]), .Q(n579) );
   OAI12P2_X0_18_SVT U691 ( .A0(n570), .A1(n614), .B0(n611), .Q(n429) );
-  OAI22_X0_18_SVT U692 ( .A0(n476), .A1(n615), .B0(n592), .B1(n611), .Q(n428)
+  OAI22_X0_18_SVT U692 ( .A0(n475), .A1(n615), .B0(n592), .B1(n611), .Q(n428)
          );
   CLKINV_X1_18_SVT U693 ( .A(n602), .Q(n592) );
   OAI22_X0_18_SVT U694 ( .A0(n570), .A1(n616), .B0(n552), .B1(n611), .Q(n427)
          );
-  OAI22_X0_18_SVT U695 ( .A0(n477), .A1(n617), .B0(n596), .B1(n611), .Q(n426)
+  OAI22_X0_18_SVT U695 ( .A0(n476), .A1(n617), .B0(n596), .B1(n611), .Q(n426)
          );
   CLKNAND2_X2_18_SVT U696 ( .A(n583), .B(n582), .Q(n611) );
   CLKINV_X1_18_SVT U697 ( .A(n584), .Q(n582) );
   CLKNAND2_X2_18_SVT U698 ( .A(next_lb_code[3]), .B(next_lb_code[2]), .Q(n584)
          );
-  OAI221_X0_18_SVT U699 ( .A0(n578), .A1(n607), .B0(n476), .B1(n618), .C0(n572), .Q(n425) );
+  OAI221_X0_18_SVT U699 ( .A0(n578), .A1(n607), .B0(n475), .B1(n618), .C0(n572), .Q(n425) );
   CLKNAND2_X2_18_SVT U700 ( .A(n590), .B(next_lb_code[2]), .Q(n607) );
   CLKINV_X1_18_SVT U701 ( .A(n596), .Q(n590) );
   OAI221_X0_18_SVT U702 ( .A0(n553), .A1(n576), .B0(n570), .B1(n619), .C0(n572), .Q(n424) );
@@ -526,13 +526,13 @@ module Control ( clk, rst_n, S_Ain_c, Mode, WL_Enable, WL_Zero, BL_Enable,
   AOI21_X0_18_SVT U704 ( .A0(next_lb_code[3]), .A1(n511), .B0(n583), .Q(n572)
          );
   CLKINV_X1_18_SVT U705 ( .A(next_lb_code[2]), .Q(n553) );
-  OAI12P2_X0_18_SVT U706 ( .A0(n477), .A1(n621), .B0(n622), .Q(n422) );
-  OAI221_X0_18_SVT U707 ( .A0(n578), .A1(n596), .B0(n476), .B1(n623), .C0(n622), .Q(n421) );
+  OAI12P2_X0_18_SVT U706 ( .A0(n476), .A1(n621), .B0(n622), .Q(n422) );
+  OAI221_X0_18_SVT U707 ( .A0(n578), .A1(n596), .B0(n475), .B1(n623), .C0(n622), .Q(n421) );
   CLKNAND2_X2_18_SVT U708 ( .A(next_lb_code[1]), .B(S_Ain_c), .Q(n596) );
   OAI211_X0_18_SVT U709 ( .A0(n570), .A1(n624), .B0(n576), .C0(n622), .Q(n420)
          );
   CLKNAND2_X2_18_SVT U710 ( .A(n511), .B(next_lb_code[1]), .Q(n576) );
-  OAI211_X0_18_SVT U711 ( .A0(n477), .A1(n625), .B0(n573), .C0(n622), .Q(n419)
+  OAI211_X0_18_SVT U711 ( .A0(n476), .A1(n625), .B0(n573), .C0(n622), .Q(n419)
          );
   NOR2_A_NOR2_X0_18_SVT U712 ( .A0N(n599), .A1N(n578), .B0(n583), .Q(n622) );
   CLKINV_X1_18_SVT U713 ( .A(n586), .Q(n583) );
@@ -541,7 +541,7 @@ module Control ( clk, rst_n, S_Ain_c, Mode, WL_Enable, WL_Zero, BL_Enable,
   CLKNAND2_X2_18_SVT U715 ( .A(n511), .B(n602), .Q(n573) );
   CLKNAND2_X2_18_SVT U716 ( .A(n552), .B(n520), .Q(n602) );
   CLKINV_X1_18_SVT U717 ( .A(next_lb_code[1]), .Q(n552) );
-  OAI12P2_X0_18_SVT U718 ( .A0(n476), .A1(n626), .B0(n578), .Q(n418) );
+  OAI12P2_X0_18_SVT U718 ( .A0(n475), .A1(n626), .B0(n578), .Q(n418) );
   CLKNAND2_X2_18_SVT U719 ( .A(n478), .B(n578), .Q(n570) );
   CLKINV_X1_18_SVT U720 ( .A(n511), .Q(n578) );
   NOR2P3_X1_18_SVT U721 ( .A(n533), .B(n545), .Q(n511) );
@@ -821,278 +821,279 @@ module Control ( clk, rst_n, S_Ain_c, Mode, WL_Enable, WL_Zero, BL_Enable,
   CLKINV_X1_18_SVT U880 ( .A(Mode[0]), .Q(n508) );
   INV_A_NAND3_X0_18_SVT U881 ( .AN(bl_cnt[1]), .B(bl_cnt[0]), .C(bl_cnt[2]), 
         .Q(n539) );
-  NOR2P3_X1_18_SVT U882 ( .A(n475), .B(n665), .Q(WL_S[9]) );
+  NOR2P3_X1_18_SVT U882 ( .A(n477), .B(n665), .Q(WL_S[9]) );
   CLKINV_X1_18_SVT U883 ( .A(wl_decoded[9]), .Q(n665) );
-  NOR2P3_X1_18_SVT U884 ( .A(n475), .B(n667), .Q(WL_S[8]) );
+  NOR2P3_X1_18_SVT U884 ( .A(n477), .B(n667), .Q(WL_S[8]) );
   CLKINV_X1_18_SVT U885 ( .A(wl_decoded[8]), .Q(n667) );
-  NOR2P3_X1_18_SVT U886 ( .A(n475), .B(n669), .Q(WL_S[7]) );
+  NOR2P3_X1_18_SVT U886 ( .A(n477), .B(n669), .Q(WL_S[7]) );
   CLKINV_X1_18_SVT U887 ( .A(wl_decoded[7]), .Q(n669) );
-  NOR2P3_X1_18_SVT U888 ( .A(n475), .B(n671), .Q(WL_S[6]) );
+  NOR2P3_X1_18_SVT U888 ( .A(n477), .B(n671), .Q(WL_S[6]) );
   CLKINV_X1_18_SVT U889 ( .A(wl_decoded[6]), .Q(n671) );
-  NOR2P3_X1_18_SVT U890 ( .A(n475), .B(n672), .Q(WL_S[5]) );
+  NOR2P3_X1_18_SVT U890 ( .A(n477), .B(n672), .Q(WL_S[5]) );
   CLKINV_X1_18_SVT U891 ( .A(wl_decoded[5]), .Q(n672) );
-  NOR2P3_X1_18_SVT U892 ( .A(n475), .B(n673), .Q(WL_S[4]) );
+  NOR2P3_X1_18_SVT U892 ( .A(n477), .B(n673), .Q(WL_S[4]) );
   CLKINV_X1_18_SVT U893 ( .A(wl_decoded[4]), .Q(n673) );
-  NOR2P3_X1_18_SVT U894 ( .A(n475), .B(n674), .Q(WL_S[3]) );
+  NOR2P3_X1_18_SVT U894 ( .A(n477), .B(n674), .Q(WL_S[3]) );
   CLKINV_X1_18_SVT U895 ( .A(wl_decoded[3]), .Q(n674) );
-  NOR2P3_X1_18_SVT U896 ( .A(n475), .B(n633), .Q(WL_S[31]) );
+  NOR2P3_X1_18_SVT U896 ( .A(n477), .B(n633), .Q(WL_S[31]) );
   CLKINV_X1_18_SVT U897 ( .A(wl_decoded[31]), .Q(n633) );
-  NOR2P3_X1_18_SVT U898 ( .A(n475), .B(n635), .Q(WL_S[30]) );
+  NOR2P3_X1_18_SVT U898 ( .A(n477), .B(n635), .Q(WL_S[30]) );
   CLKINV_X1_18_SVT U899 ( .A(wl_decoded[30]), .Q(n635) );
-  NOR2P3_X1_18_SVT U900 ( .A(n475), .B(n675), .Q(WL_S[2]) );
+  NOR2P3_X1_18_SVT U900 ( .A(n477), .B(n675), .Q(WL_S[2]) );
   CLKINV_X1_18_SVT U901 ( .A(wl_decoded[2]), .Q(n675) );
-  NOR2P3_X1_18_SVT U902 ( .A(n475), .B(n637), .Q(WL_S[29]) );
+  NOR2P3_X1_18_SVT U902 ( .A(n477), .B(n637), .Q(WL_S[29]) );
   CLKINV_X1_18_SVT U903 ( .A(wl_decoded[29]), .Q(n637) );
-  NOR2P3_X1_18_SVT U904 ( .A(n475), .B(n638), .Q(WL_S[28]) );
+  NOR2P3_X1_18_SVT U904 ( .A(n477), .B(n638), .Q(WL_S[28]) );
   CLKINV_X1_18_SVT U905 ( .A(wl_decoded[28]), .Q(n638) );
-  NOR2P3_X1_18_SVT U906 ( .A(n475), .B(n640), .Q(WL_S[27]) );
+  NOR2P3_X1_18_SVT U906 ( .A(n477), .B(n640), .Q(WL_S[27]) );
   CLKINV_X1_18_SVT U907 ( .A(wl_decoded[27]), .Q(n640) );
-  NOR2P3_X1_18_SVT U908 ( .A(n475), .B(n641), .Q(WL_S[26]) );
+  NOR2P3_X1_18_SVT U908 ( .A(n477), .B(n641), .Q(WL_S[26]) );
   CLKINV_X1_18_SVT U909 ( .A(wl_decoded[26]), .Q(n641) );
-  NOR2P3_X1_18_SVT U910 ( .A(n475), .B(n643), .Q(WL_S[25]) );
+  NOR2P3_X1_18_SVT U910 ( .A(n477), .B(n643), .Q(WL_S[25]) );
   CLKINV_X1_18_SVT U911 ( .A(wl_decoded[25]), .Q(n643) );
-  NOR2P3_X1_18_SVT U912 ( .A(n475), .B(n645), .Q(WL_S[24]) );
+  NOR2P3_X1_18_SVT U912 ( .A(n477), .B(n645), .Q(WL_S[24]) );
   CLKINV_X1_18_SVT U913 ( .A(wl_decoded[24]), .Q(n645) );
-  NOR2P3_X1_18_SVT U914 ( .A(n475), .B(n647), .Q(WL_S[23]) );
+  NOR2P3_X1_18_SVT U914 ( .A(n477), .B(n647), .Q(WL_S[23]) );
   CLKINV_X1_18_SVT U915 ( .A(wl_decoded[23]), .Q(n647) );
-  NOR2P3_X1_18_SVT U916 ( .A(n475), .B(n649), .Q(WL_S[22]) );
+  NOR2P3_X1_18_SVT U916 ( .A(n477), .B(n649), .Q(WL_S[22]) );
   CLKINV_X1_18_SVT U917 ( .A(wl_decoded[22]), .Q(n649) );
-  NOR2P3_X1_18_SVT U918 ( .A(n475), .B(n650), .Q(WL_S[21]) );
+  NOR2P3_X1_18_SVT U918 ( .A(n477), .B(n650), .Q(WL_S[21]) );
   CLKINV_X1_18_SVT U919 ( .A(wl_decoded[21]), .Q(n650) );
-  NOR2P3_X1_18_SVT U920 ( .A(n475), .B(n651), .Q(WL_S[20]) );
+  NOR2P3_X1_18_SVT U920 ( .A(n477), .B(n651), .Q(WL_S[20]) );
   CLKINV_X1_18_SVT U921 ( .A(wl_decoded[20]), .Q(n651) );
-  NOR2P3_X1_18_SVT U922 ( .A(n475), .B(n676), .Q(WL_S[1]) );
+  NOR2P3_X1_18_SVT U922 ( .A(n477), .B(n676), .Q(WL_S[1]) );
   CLKINV_X1_18_SVT U923 ( .A(wl_decoded[1]), .Q(n676) );
-  NOR2P3_X1_18_SVT U924 ( .A(n475), .B(n652), .Q(WL_S[19]) );
+  NOR2P3_X1_18_SVT U924 ( .A(n477), .B(n652), .Q(WL_S[19]) );
   CLKINV_X1_18_SVT U925 ( .A(wl_decoded[19]), .Q(n652) );
-  NOR2P3_X1_18_SVT U926 ( .A(n475), .B(n653), .Q(WL_S[18]) );
+  NOR2P3_X1_18_SVT U926 ( .A(n477), .B(n653), .Q(WL_S[18]) );
   CLKINV_X1_18_SVT U927 ( .A(wl_decoded[18]), .Q(n653) );
-  NOR2P3_X1_18_SVT U928 ( .A(n475), .B(n654), .Q(WL_S[17]) );
+  NOR2P3_X1_18_SVT U928 ( .A(n477), .B(n654), .Q(WL_S[17]) );
   CLKINV_X1_18_SVT U929 ( .A(wl_decoded[17]), .Q(n654) );
-  NOR2P3_X1_18_SVT U930 ( .A(n475), .B(n655), .Q(WL_S[16]) );
+  NOR2P3_X1_18_SVT U930 ( .A(n477), .B(n655), .Q(WL_S[16]) );
   CLKINV_X1_18_SVT U931 ( .A(wl_decoded[16]), .Q(n655) );
-  NOR2P3_X1_18_SVT U932 ( .A(n475), .B(n658), .Q(WL_S[15]) );
+  NOR2P3_X1_18_SVT U932 ( .A(n477), .B(n658), .Q(WL_S[15]) );
   CLKINV_X1_18_SVT U933 ( .A(wl_decoded[15]), .Q(n658) );
-  NOR2P3_X1_18_SVT U934 ( .A(n475), .B(n660), .Q(WL_S[14]) );
+  NOR2P3_X1_18_SVT U934 ( .A(n477), .B(n660), .Q(WL_S[14]) );
   CLKINV_X1_18_SVT U935 ( .A(wl_decoded[14]), .Q(n660) );
-  NOR2P3_X1_18_SVT U936 ( .A(n475), .B(n661), .Q(WL_S[13]) );
+  NOR2P3_X1_18_SVT U936 ( .A(n477), .B(n661), .Q(WL_S[13]) );
   CLKINV_X1_18_SVT U937 ( .A(wl_decoded[13]), .Q(n661) );
-  NOR2P3_X1_18_SVT U938 ( .A(n475), .B(n662), .Q(WL_S[12]) );
+  NOR2P3_X1_18_SVT U938 ( .A(n477), .B(n662), .Q(WL_S[12]) );
   CLKINV_X1_18_SVT U939 ( .A(wl_decoded[12]), .Q(n662) );
-  NOR2P3_X1_18_SVT U940 ( .A(n475), .B(n663), .Q(WL_S[11]) );
+  NOR2P3_X1_18_SVT U940 ( .A(n477), .B(n663), .Q(WL_S[11]) );
   CLKINV_X1_18_SVT U941 ( .A(wl_decoded[11]), .Q(n663) );
-  NOR2P3_X1_18_SVT U942 ( .A(n475), .B(n664), .Q(WL_S[10]) );
+  NOR2P3_X1_18_SVT U942 ( .A(n477), .B(n664), .Q(WL_S[10]) );
   CLKINV_X1_18_SVT U943 ( .A(wl_decoded[10]), .Q(n664) );
-  NOR2P3_X1_18_SVT U944 ( .A(n475), .B(n677), .Q(WL_S[0]) );
+  NOR2P3_X1_18_SVT U944 ( .A(n477), .B(n677), .Q(WL_S[0]) );
   CLKINV_X1_18_SVT U945 ( .A(wl_decoded[0]), .Q(n677) );
-  NOR2P3_X1_18_SVT U946 ( .A(n574), .B(n488), .Q(LB_en[9]) );
-  CLKINV_X1_18_SVT U947 ( .A(lb_en_reg[9]), .Q(n574) );
-  NOR2P3_X1_18_SVT U948 ( .A(n571), .B(n488), .Q(LB_en[8]) );
-  CLKINV_X1_18_SVT U949 ( .A(lb_en_reg[8]), .Q(n571) );
-  NOR2P3_X1_18_SVT U950 ( .A(n618), .B(n488), .Q(LB_en[7]) );
-  CLKINV_X1_18_SVT U951 ( .A(lb_en_reg[7]), .Q(n618) );
-  NOR2P3_X1_18_SVT U952 ( .A(n619), .B(n488), .Q(LB_en[6]) );
-  CLKINV_X1_18_SVT U953 ( .A(lb_en_reg[6]), .Q(n619) );
-  NOR2P3_X1_18_SVT U954 ( .A(n620), .B(n488), .Q(LB_en[5]) );
-  CLKINV_X1_18_SVT U955 ( .A(lb_en_reg[5]), .Q(n620) );
-  NOR2P3_X1_18_SVT U956 ( .A(n621), .B(n488), .Q(LB_en[4]) );
-  CLKINV_X1_18_SVT U957 ( .A(lb_en_reg[4]), .Q(n621) );
-  NOR2P3_X1_18_SVT U958 ( .A(n623), .B(n487), .Q(LB_en[3]) );
-  CLKINV_X1_18_SVT U959 ( .A(lb_en_reg[3]), .Q(n623) );
-  NOR2P3_X1_18_SVT U960 ( .A(n617), .B(n487), .Q(LB_en[31]) );
-  CLKINV_X1_18_SVT U961 ( .A(lb_en_reg[31]), .Q(n617) );
-  NOR2P3_X1_18_SVT U962 ( .A(n616), .B(n487), .Q(LB_en[30]) );
-  CLKINV_X1_18_SVT U963 ( .A(lb_en_reg[30]), .Q(n616) );
-  NOR2P3_X1_18_SVT U964 ( .A(n624), .B(n487), .Q(LB_en[2]) );
-  CLKINV_X1_18_SVT U965 ( .A(lb_en_reg[2]), .Q(n624) );
-  NOR2P3_X1_18_SVT U966 ( .A(n615), .B(n487), .Q(LB_en[29]) );
-  CLKINV_X1_18_SVT U967 ( .A(lb_en_reg[29]), .Q(n615) );
-  NOR2P3_X1_18_SVT U968 ( .A(n614), .B(n487), .Q(LB_en[28]) );
-  CLKINV_X1_18_SVT U969 ( .A(lb_en_reg[28]), .Q(n614) );
-  NOR2P3_X1_18_SVT U970 ( .A(n613), .B(n487), .Q(LB_en[27]) );
-  CLKINV_X1_18_SVT U971 ( .A(lb_en_reg[27]), .Q(n613) );
-  NOR2P3_X1_18_SVT U972 ( .A(n612), .B(n487), .Q(LB_en[26]) );
-  CLKINV_X1_18_SVT U973 ( .A(lb_en_reg[26]), .Q(n612) );
-  NOR2P3_X1_18_SVT U974 ( .A(n610), .B(n487), .Q(LB_en[25]) );
-  CLKINV_X1_18_SVT U975 ( .A(lb_en_reg[25]), .Q(n610) );
-  NOR2P3_X1_18_SVT U976 ( .A(n609), .B(n487), .Q(LB_en[24]) );
-  CLKINV_X1_18_SVT U977 ( .A(lb_en_reg[24]), .Q(n609) );
-  NOR2P3_X1_18_SVT U978 ( .A(n608), .B(n487), .Q(LB_en[23]) );
-  CLKINV_X1_18_SVT U979 ( .A(lb_en_reg[23]), .Q(n608) );
-  NOR2P3_X1_18_SVT U980 ( .A(n604), .B(n487), .Q(LB_en[22]) );
-  CLKINV_X1_18_SVT U981 ( .A(lb_en_reg[22]), .Q(n604) );
-  NOR2P3_X1_18_SVT U982 ( .A(n600), .B(n487), .Q(LB_en[21]) );
-  CLKINV_X1_18_SVT U983 ( .A(lb_en_reg[21]), .Q(n600) );
-  NOR2P3_X1_18_SVT U984 ( .A(n598), .B(n486), .Q(LB_en[20]) );
-  CLKINV_X1_18_SVT U985 ( .A(lb_en_reg[20]), .Q(n598) );
-  NOR2P3_X1_18_SVT U986 ( .A(n625), .B(n486), .Q(LB_en[1]) );
-  CLKINV_X1_18_SVT U987 ( .A(lb_en_reg[1]), .Q(n625) );
-  NOR2P3_X1_18_SVT U988 ( .A(n597), .B(n486), .Q(LB_en[19]) );
-  CLKINV_X1_18_SVT U989 ( .A(lb_en_reg[19]), .Q(n597) );
-  NOR2P3_X1_18_SVT U990 ( .A(n595), .B(n486), .Q(LB_en[18]) );
-  CLKINV_X1_18_SVT U991 ( .A(lb_en_reg[18]), .Q(n595) );
-  NOR2P3_X1_18_SVT U992 ( .A(n593), .B(n486), .Q(LB_en[17]) );
-  CLKINV_X1_18_SVT U993 ( .A(lb_en_reg[17]), .Q(n593) );
-  NOR2P3_X1_18_SVT U994 ( .A(n591), .B(n486), .Q(LB_en[16]) );
-  CLKINV_X1_18_SVT U995 ( .A(lb_en_reg[16]), .Q(n591) );
-  NOR2P3_X1_18_SVT U996 ( .A(n588), .B(n486), .Q(LB_en[15]) );
-  CLKINV_X1_18_SVT U997 ( .A(lb_en_reg[15]), .Q(n588) );
-  NOR2P3_X1_18_SVT U998 ( .A(n587), .B(n486), .Q(LB_en[14]) );
-  CLKINV_X1_18_SVT U999 ( .A(lb_en_reg[14]), .Q(n587) );
-  NOR2P3_X1_18_SVT U1000 ( .A(n585), .B(n486), .Q(LB_en[13]) );
-  CLKINV_X1_18_SVT U1001 ( .A(lb_en_reg[13]), .Q(n585) );
-  NOR2P3_X1_18_SVT U1002 ( .A(n581), .B(n486), .Q(LB_en[12]) );
-  CLKINV_X1_18_SVT U1003 ( .A(lb_en_reg[12]), .Q(n581) );
-  NOR2P3_X1_18_SVT U1004 ( .A(n580), .B(n486), .Q(LB_en[11]) );
-  CLKINV_X1_18_SVT U1005 ( .A(lb_en_reg[11]), .Q(n580) );
-  NOR2P3_X1_18_SVT U1006 ( .A(n577), .B(n486), .Q(LB_en[10]) );
-  CLKINV_X1_18_SVT U1007 ( .A(lb_en_reg[10]), .Q(n577) );
-  NOR2P3_X1_18_SVT U1008 ( .A(n626), .B(n486), .Q(LB_en[0]) );
-  NAND3T_X0_18_SVT U1009 ( .A(current_state[3]), .B(n516), .C(n529), .Q(n764)
+  CLKNAND2_X2_18_SVT U946 ( .A(WL_Enable), .B(n764), .Q(n763) );
+  NOR2P3_X1_18_SVT U947 ( .A(n574), .B(n488), .Q(LB_en[9]) );
+  CLKINV_X1_18_SVT U948 ( .A(lb_en_reg[9]), .Q(n574) );
+  NOR2P3_X1_18_SVT U949 ( .A(n571), .B(n488), .Q(LB_en[8]) );
+  CLKINV_X1_18_SVT U950 ( .A(lb_en_reg[8]), .Q(n571) );
+  NOR2P3_X1_18_SVT U951 ( .A(n618), .B(n488), .Q(LB_en[7]) );
+  CLKINV_X1_18_SVT U952 ( .A(lb_en_reg[7]), .Q(n618) );
+  NOR2P3_X1_18_SVT U953 ( .A(n619), .B(n488), .Q(LB_en[6]) );
+  CLKINV_X1_18_SVT U954 ( .A(lb_en_reg[6]), .Q(n619) );
+  NOR2P3_X1_18_SVT U955 ( .A(n620), .B(n488), .Q(LB_en[5]) );
+  CLKINV_X1_18_SVT U956 ( .A(lb_en_reg[5]), .Q(n620) );
+  NOR2P3_X1_18_SVT U957 ( .A(n621), .B(n488), .Q(LB_en[4]) );
+  CLKINV_X1_18_SVT U958 ( .A(lb_en_reg[4]), .Q(n621) );
+  NOR2P3_X1_18_SVT U959 ( .A(n623), .B(n487), .Q(LB_en[3]) );
+  CLKINV_X1_18_SVT U960 ( .A(lb_en_reg[3]), .Q(n623) );
+  NOR2P3_X1_18_SVT U961 ( .A(n617), .B(n487), .Q(LB_en[31]) );
+  CLKINV_X1_18_SVT U962 ( .A(lb_en_reg[31]), .Q(n617) );
+  NOR2P3_X1_18_SVT U963 ( .A(n616), .B(n487), .Q(LB_en[30]) );
+  CLKINV_X1_18_SVT U964 ( .A(lb_en_reg[30]), .Q(n616) );
+  NOR2P3_X1_18_SVT U965 ( .A(n624), .B(n487), .Q(LB_en[2]) );
+  CLKINV_X1_18_SVT U966 ( .A(lb_en_reg[2]), .Q(n624) );
+  NOR2P3_X1_18_SVT U967 ( .A(n615), .B(n487), .Q(LB_en[29]) );
+  CLKINV_X1_18_SVT U968 ( .A(lb_en_reg[29]), .Q(n615) );
+  NOR2P3_X1_18_SVT U969 ( .A(n614), .B(n487), .Q(LB_en[28]) );
+  CLKINV_X1_18_SVT U970 ( .A(lb_en_reg[28]), .Q(n614) );
+  NOR2P3_X1_18_SVT U971 ( .A(n613), .B(n487), .Q(LB_en[27]) );
+  CLKINV_X1_18_SVT U972 ( .A(lb_en_reg[27]), .Q(n613) );
+  NOR2P3_X1_18_SVT U973 ( .A(n612), .B(n487), .Q(LB_en[26]) );
+  CLKINV_X1_18_SVT U974 ( .A(lb_en_reg[26]), .Q(n612) );
+  NOR2P3_X1_18_SVT U975 ( .A(n610), .B(n487), .Q(LB_en[25]) );
+  CLKINV_X1_18_SVT U976 ( .A(lb_en_reg[25]), .Q(n610) );
+  NOR2P3_X1_18_SVT U977 ( .A(n609), .B(n487), .Q(LB_en[24]) );
+  CLKINV_X1_18_SVT U978 ( .A(lb_en_reg[24]), .Q(n609) );
+  NOR2P3_X1_18_SVT U979 ( .A(n608), .B(n487), .Q(LB_en[23]) );
+  CLKINV_X1_18_SVT U980 ( .A(lb_en_reg[23]), .Q(n608) );
+  NOR2P3_X1_18_SVT U981 ( .A(n604), .B(n487), .Q(LB_en[22]) );
+  CLKINV_X1_18_SVT U982 ( .A(lb_en_reg[22]), .Q(n604) );
+  NOR2P3_X1_18_SVT U983 ( .A(n600), .B(n487), .Q(LB_en[21]) );
+  CLKINV_X1_18_SVT U984 ( .A(lb_en_reg[21]), .Q(n600) );
+  NOR2P3_X1_18_SVT U985 ( .A(n598), .B(n486), .Q(LB_en[20]) );
+  CLKINV_X1_18_SVT U986 ( .A(lb_en_reg[20]), .Q(n598) );
+  NOR2P3_X1_18_SVT U987 ( .A(n625), .B(n486), .Q(LB_en[1]) );
+  CLKINV_X1_18_SVT U988 ( .A(lb_en_reg[1]), .Q(n625) );
+  NOR2P3_X1_18_SVT U989 ( .A(n597), .B(n486), .Q(LB_en[19]) );
+  CLKINV_X1_18_SVT U990 ( .A(lb_en_reg[19]), .Q(n597) );
+  NOR2P3_X1_18_SVT U991 ( .A(n595), .B(n486), .Q(LB_en[18]) );
+  CLKINV_X1_18_SVT U992 ( .A(lb_en_reg[18]), .Q(n595) );
+  NOR2P3_X1_18_SVT U993 ( .A(n593), .B(n486), .Q(LB_en[17]) );
+  CLKINV_X1_18_SVT U994 ( .A(lb_en_reg[17]), .Q(n593) );
+  NOR2P3_X1_18_SVT U995 ( .A(n591), .B(n486), .Q(LB_en[16]) );
+  CLKINV_X1_18_SVT U996 ( .A(lb_en_reg[16]), .Q(n591) );
+  NOR2P3_X1_18_SVT U997 ( .A(n588), .B(n486), .Q(LB_en[15]) );
+  CLKINV_X1_18_SVT U998 ( .A(lb_en_reg[15]), .Q(n588) );
+  NOR2P3_X1_18_SVT U999 ( .A(n587), .B(n486), .Q(LB_en[14]) );
+  CLKINV_X1_18_SVT U1000 ( .A(lb_en_reg[14]), .Q(n587) );
+  NOR2P3_X1_18_SVT U1001 ( .A(n585), .B(n486), .Q(LB_en[13]) );
+  CLKINV_X1_18_SVT U1002 ( .A(lb_en_reg[13]), .Q(n585) );
+  NOR2P3_X1_18_SVT U1003 ( .A(n581), .B(n486), .Q(LB_en[12]) );
+  CLKINV_X1_18_SVT U1004 ( .A(lb_en_reg[12]), .Q(n581) );
+  NOR2P3_X1_18_SVT U1005 ( .A(n580), .B(n486), .Q(LB_en[11]) );
+  CLKINV_X1_18_SVT U1006 ( .A(lb_en_reg[11]), .Q(n580) );
+  NOR2P3_X1_18_SVT U1007 ( .A(n577), .B(n486), .Q(LB_en[10]) );
+  CLKINV_X1_18_SVT U1008 ( .A(lb_en_reg[10]), .Q(n577) );
+  NOR2P3_X1_18_SVT U1009 ( .A(n626), .B(n486), .Q(LB_en[0]) );
+  NAND3T_X0_18_SVT U1010 ( .A(current_state[3]), .B(n516), .C(n529), .Q(n765)
          );
-  NOR2P3_X1_18_SVT U1010 ( .A(current_state[2]), .B(n551), .Q(n529) );
-  CLKINV_X1_18_SVT U1011 ( .A(lb_en_reg[0]), .Q(n626) );
-  NOR2P3_X1_18_SVT U1012 ( .A(n489), .B(n750), .Q(BL_S[9]) );
-  CLKINV_X1_18_SVT U1013 ( .A(bl_decoded[9]), .Q(n750) );
-  NOR2P3_X1_18_SVT U1014 ( .A(n489), .B(n751), .Q(BL_S[8]) );
-  CLKINV_X1_18_SVT U1015 ( .A(bl_decoded[8]), .Q(n751) );
-  NOR2P3_X1_18_SVT U1016 ( .A(n489), .B(n753), .Q(BL_S[7]) );
-  CLKINV_X1_18_SVT U1017 ( .A(bl_decoded[7]), .Q(n753) );
-  NOR2P3_X1_18_SVT U1018 ( .A(n489), .B(n754), .Q(BL_S[6]) );
-  CLKINV_X1_18_SVT U1019 ( .A(bl_decoded[6]), .Q(n754) );
-  NOR2P3_X1_18_SVT U1020 ( .A(n489), .B(n681), .Q(BL_S[63]) );
-  CLKINV_X1_18_SVT U1021 ( .A(bl_decoded[63]), .Q(n681) );
-  NOR2P3_X1_18_SVT U1022 ( .A(n489), .B(n683), .Q(BL_S[62]) );
-  CLKINV_X1_18_SVT U1023 ( .A(bl_decoded[62]), .Q(n683) );
-  NOR2P3_X1_18_SVT U1024 ( .A(n489), .B(n685), .Q(BL_S[61]) );
-  CLKINV_X1_18_SVT U1025 ( .A(bl_decoded[61]), .Q(n685) );
-  NOR2P3_X1_18_SVT U1026 ( .A(n489), .B(n687), .Q(BL_S[60]) );
-  CLKINV_X1_18_SVT U1027 ( .A(bl_decoded[60]), .Q(n687) );
-  NOR2P3_X1_18_SVT U1028 ( .A(n489), .B(n755), .Q(BL_S[5]) );
-  CLKINV_X1_18_SVT U1029 ( .A(bl_decoded[5]), .Q(n755) );
-  NOR2P3_X1_18_SVT U1030 ( .A(n489), .B(n689), .Q(BL_S[59]) );
-  CLKINV_X1_18_SVT U1031 ( .A(bl_decoded[59]), .Q(n689) );
-  NOR2P3_X1_18_SVT U1032 ( .A(n489), .B(n691), .Q(BL_S[58]) );
-  CLKINV_X1_18_SVT U1033 ( .A(bl_decoded[58]), .Q(n691) );
-  NOR2P3_X1_18_SVT U1034 ( .A(n489), .B(n693), .Q(BL_S[57]) );
-  CLKINV_X1_18_SVT U1035 ( .A(bl_decoded[57]), .Q(n693) );
-  NOR2P3_X1_18_SVT U1036 ( .A(n489), .B(n695), .Q(BL_S[56]) );
-  CLKINV_X1_18_SVT U1037 ( .A(bl_decoded[56]), .Q(n695) );
-  NOR2P3_X1_18_SVT U1038 ( .A(n490), .B(n698), .Q(BL_S[55]) );
-  CLKINV_X1_18_SVT U1039 ( .A(bl_decoded[55]), .Q(n698) );
-  NOR2P3_X1_18_SVT U1040 ( .A(n490), .B(n699), .Q(BL_S[54]) );
-  CLKINV_X1_18_SVT U1041 ( .A(bl_decoded[54]), .Q(n699) );
-  NOR2P3_X1_18_SVT U1042 ( .A(n490), .B(n700), .Q(BL_S[53]) );
-  CLKINV_X1_18_SVT U1043 ( .A(bl_decoded[53]), .Q(n700) );
-  NOR2P3_X1_18_SVT U1044 ( .A(n490), .B(n701), .Q(BL_S[52]) );
-  CLKINV_X1_18_SVT U1045 ( .A(bl_decoded[52]), .Q(n701) );
-  NOR2P3_X1_18_SVT U1046 ( .A(n490), .B(n702), .Q(BL_S[51]) );
-  CLKINV_X1_18_SVT U1047 ( .A(bl_decoded[51]), .Q(n702) );
-  NOR2P3_X1_18_SVT U1048 ( .A(n490), .B(n703), .Q(BL_S[50]) );
-  CLKINV_X1_18_SVT U1049 ( .A(bl_decoded[50]), .Q(n703) );
-  NOR2P3_X1_18_SVT U1050 ( .A(n490), .B(n756), .Q(BL_S[4]) );
-  CLKINV_X1_18_SVT U1051 ( .A(bl_decoded[4]), .Q(n756) );
-  NOR2P3_X1_18_SVT U1052 ( .A(n490), .B(n704), .Q(BL_S[49]) );
-  CLKINV_X1_18_SVT U1053 ( .A(bl_decoded[49]), .Q(n704) );
-  NOR2P3_X1_18_SVT U1054 ( .A(n490), .B(n705), .Q(BL_S[48]) );
-  CLKINV_X1_18_SVT U1055 ( .A(bl_decoded[48]), .Q(n705) );
-  NOR2P3_X1_18_SVT U1056 ( .A(n490), .B(n707), .Q(BL_S[47]) );
-  CLKINV_X1_18_SVT U1057 ( .A(bl_decoded[47]), .Q(n707) );
-  NOR2P3_X1_18_SVT U1058 ( .A(n490), .B(n708), .Q(BL_S[46]) );
-  CLKINV_X1_18_SVT U1059 ( .A(bl_decoded[46]), .Q(n708) );
-  NOR2P3_X1_18_SVT U1060 ( .A(n490), .B(n709), .Q(BL_S[45]) );
-  CLKINV_X1_18_SVT U1061 ( .A(bl_decoded[45]), .Q(n709) );
-  NOR2P3_X1_18_SVT U1062 ( .A(n490), .B(n710), .Q(BL_S[44]) );
-  CLKINV_X1_18_SVT U1063 ( .A(bl_decoded[44]), .Q(n710) );
-  NOR2P3_X1_18_SVT U1064 ( .A(n491), .B(n711), .Q(BL_S[43]) );
-  CLKINV_X1_18_SVT U1065 ( .A(bl_decoded[43]), .Q(n711) );
-  NOR2P3_X1_18_SVT U1066 ( .A(n491), .B(n712), .Q(BL_S[42]) );
-  CLKINV_X1_18_SVT U1067 ( .A(bl_decoded[42]), .Q(n712) );
-  NOR2P3_X1_18_SVT U1068 ( .A(n491), .B(n713), .Q(BL_S[41]) );
-  CLKINV_X1_18_SVT U1069 ( .A(bl_decoded[41]), .Q(n713) );
-  NOR2P3_X1_18_SVT U1070 ( .A(n491), .B(n714), .Q(BL_S[40]) );
-  CLKINV_X1_18_SVT U1071 ( .A(bl_decoded[40]), .Q(n714) );
-  NOR2P3_X1_18_SVT U1072 ( .A(n491), .B(n757), .Q(BL_S[3]) );
-  CLKINV_X1_18_SVT U1073 ( .A(bl_decoded[3]), .Q(n757) );
-  NOR2P3_X1_18_SVT U1074 ( .A(n491), .B(n716), .Q(BL_S[39]) );
-  CLKINV_X1_18_SVT U1075 ( .A(bl_decoded[39]), .Q(n716) );
-  NOR2P3_X1_18_SVT U1076 ( .A(n491), .B(n717), .Q(BL_S[38]) );
-  CLKINV_X1_18_SVT U1077 ( .A(bl_decoded[38]), .Q(n717) );
-  NOR2P3_X1_18_SVT U1078 ( .A(n491), .B(n718), .Q(BL_S[37]) );
-  CLKINV_X1_18_SVT U1079 ( .A(bl_decoded[37]), .Q(n718) );
-  NOR2P3_X1_18_SVT U1080 ( .A(n491), .B(n719), .Q(BL_S[36]) );
-  CLKINV_X1_18_SVT U1081 ( .A(bl_decoded[36]), .Q(n719) );
-  NOR2P3_X1_18_SVT U1082 ( .A(n491), .B(n720), .Q(BL_S[35]) );
-  CLKINV_X1_18_SVT U1083 ( .A(bl_decoded[35]), .Q(n720) );
-  NOR2P3_X1_18_SVT U1084 ( .A(n491), .B(n721), .Q(BL_S[34]) );
-  CLKINV_X1_18_SVT U1085 ( .A(bl_decoded[34]), .Q(n721) );
-  NOR2P3_X1_18_SVT U1086 ( .A(n491), .B(n722), .Q(BL_S[33]) );
-  CLKINV_X1_18_SVT U1087 ( .A(bl_decoded[33]), .Q(n722) );
-  NOR2P3_X1_18_SVT U1088 ( .A(n491), .B(n723), .Q(BL_S[32]) );
-  CLKINV_X1_18_SVT U1089 ( .A(bl_decoded[32]), .Q(n723) );
-  NOR2P3_X1_18_SVT U1090 ( .A(n492), .B(n725), .Q(BL_S[31]) );
-  CLKINV_X1_18_SVT U1091 ( .A(bl_decoded[31]), .Q(n725) );
-  NOR2P3_X1_18_SVT U1092 ( .A(n492), .B(n726), .Q(BL_S[30]) );
-  CLKINV_X1_18_SVT U1093 ( .A(bl_decoded[30]), .Q(n726) );
-  NOR2P3_X1_18_SVT U1094 ( .A(n492), .B(n758), .Q(BL_S[2]) );
-  CLKINV_X1_18_SVT U1095 ( .A(bl_decoded[2]), .Q(n758) );
-  NOR2P3_X1_18_SVT U1096 ( .A(n492), .B(n727), .Q(BL_S[29]) );
-  CLKINV_X1_18_SVT U1097 ( .A(bl_decoded[29]), .Q(n727) );
-  NOR2P3_X1_18_SVT U1098 ( .A(n492), .B(n728), .Q(BL_S[28]) );
-  CLKINV_X1_18_SVT U1099 ( .A(bl_decoded[28]), .Q(n728) );
-  NOR2P3_X1_18_SVT U1100 ( .A(n492), .B(n729), .Q(BL_S[27]) );
-  CLKINV_X1_18_SVT U1101 ( .A(bl_decoded[27]), .Q(n729) );
-  NOR2P3_X1_18_SVT U1102 ( .A(n492), .B(n730), .Q(BL_S[26]) );
-  CLKINV_X1_18_SVT U1103 ( .A(bl_decoded[26]), .Q(n730) );
-  NOR2P3_X1_18_SVT U1104 ( .A(n492), .B(n731), .Q(BL_S[25]) );
-  CLKINV_X1_18_SVT U1105 ( .A(bl_decoded[25]), .Q(n731) );
-  NOR2P3_X1_18_SVT U1106 ( .A(n492), .B(n732), .Q(BL_S[24]) );
-  CLKINV_X1_18_SVT U1107 ( .A(bl_decoded[24]), .Q(n732) );
-  NOR2P3_X1_18_SVT U1108 ( .A(n492), .B(n735), .Q(BL_S[23]) );
-  CLKINV_X1_18_SVT U1109 ( .A(bl_decoded[23]), .Q(n735) );
-  NOR2P3_X1_18_SVT U1110 ( .A(n492), .B(n736), .Q(BL_S[22]) );
-  CLKINV_X1_18_SVT U1111 ( .A(bl_decoded[22]), .Q(n736) );
-  NOR2P3_X1_18_SVT U1112 ( .A(n492), .B(n737), .Q(BL_S[21]) );
-  CLKINV_X1_18_SVT U1113 ( .A(bl_decoded[21]), .Q(n737) );
-  NOR2P3_X1_18_SVT U1114 ( .A(n492), .B(n738), .Q(BL_S[20]) );
-  CLKINV_X1_18_SVT U1115 ( .A(bl_decoded[20]), .Q(n738) );
-  NOR2P3_X1_18_SVT U1116 ( .A(n493), .B(n759), .Q(BL_S[1]) );
-  CLKINV_X1_18_SVT U1117 ( .A(bl_decoded[1]), .Q(n759) );
-  NOR2P3_X1_18_SVT U1118 ( .A(n493), .B(n739), .Q(BL_S[19]) );
-  CLKINV_X1_18_SVT U1119 ( .A(bl_decoded[19]), .Q(n739) );
-  NOR2P3_X1_18_SVT U1120 ( .A(n493), .B(n740), .Q(BL_S[18]) );
-  CLKINV_X1_18_SVT U1121 ( .A(bl_decoded[18]), .Q(n740) );
-  NOR2P3_X1_18_SVT U1122 ( .A(n493), .B(n741), .Q(BL_S[17]) );
-  CLKINV_X1_18_SVT U1123 ( .A(bl_decoded[17]), .Q(n741) );
-  NOR2P3_X1_18_SVT U1124 ( .A(n493), .B(n742), .Q(BL_S[16]) );
-  CLKINV_X1_18_SVT U1125 ( .A(bl_decoded[16]), .Q(n742) );
-  NOR2P3_X1_18_SVT U1126 ( .A(n493), .B(n744), .Q(BL_S[15]) );
-  CLKINV_X1_18_SVT U1127 ( .A(bl_decoded[15]), .Q(n744) );
-  NOR2P3_X1_18_SVT U1128 ( .A(n493), .B(n745), .Q(BL_S[14]) );
-  CLKINV_X1_18_SVT U1129 ( .A(bl_decoded[14]), .Q(n745) );
-  NOR2P3_X1_18_SVT U1130 ( .A(n493), .B(n746), .Q(BL_S[13]) );
-  CLKINV_X1_18_SVT U1131 ( .A(bl_decoded[13]), .Q(n746) );
-  NOR2P3_X1_18_SVT U1132 ( .A(n493), .B(n747), .Q(BL_S[12]) );
-  CLKINV_X1_18_SVT U1133 ( .A(bl_decoded[12]), .Q(n747) );
-  NOR2P3_X1_18_SVT U1134 ( .A(n493), .B(n748), .Q(BL_S[11]) );
-  CLKINV_X1_18_SVT U1135 ( .A(bl_decoded[11]), .Q(n748) );
-  NOR2P3_X1_18_SVT U1136 ( .A(n493), .B(n749), .Q(BL_S[10]) );
-  CLKINV_X1_18_SVT U1137 ( .A(bl_decoded[10]), .Q(n749) );
-  NOR2P3_X1_18_SVT U1138 ( .A(n493), .B(n760), .Q(BL_S[0]) );
-  CLKINV_X1_18_SVT U1139 ( .A(bl_decoded[0]), .Q(n760) );
-  CLKNAND2_X2_18_SVT U1140 ( .A(n504), .B(WL_Enable), .Q(n765) );
-  CLKNAND2_X2_18_SVT U1141 ( .A(n504), .B(n763), .Q(WL_Enable) );
-  CLKINV_X1_18_SVT U1142 ( .A(WL_Zero), .Q(n763) );
-  NOR4_X0_18_SVT U1143 ( .A(n538), .B(n551), .C(n534), .D(current_state[3]), 
+  NOR2P3_X1_18_SVT U1011 ( .A(current_state[2]), .B(n551), .Q(n529) );
+  CLKINV_X1_18_SVT U1012 ( .A(lb_en_reg[0]), .Q(n626) );
+  NOR2P3_X1_18_SVT U1013 ( .A(n489), .B(n750), .Q(BL_S[9]) );
+  CLKINV_X1_18_SVT U1014 ( .A(bl_decoded[9]), .Q(n750) );
+  NOR2P3_X1_18_SVT U1015 ( .A(n489), .B(n751), .Q(BL_S[8]) );
+  CLKINV_X1_18_SVT U1016 ( .A(bl_decoded[8]), .Q(n751) );
+  NOR2P3_X1_18_SVT U1017 ( .A(n489), .B(n753), .Q(BL_S[7]) );
+  CLKINV_X1_18_SVT U1018 ( .A(bl_decoded[7]), .Q(n753) );
+  NOR2P3_X1_18_SVT U1019 ( .A(n489), .B(n754), .Q(BL_S[6]) );
+  CLKINV_X1_18_SVT U1020 ( .A(bl_decoded[6]), .Q(n754) );
+  NOR2P3_X1_18_SVT U1021 ( .A(n489), .B(n681), .Q(BL_S[63]) );
+  CLKINV_X1_18_SVT U1022 ( .A(bl_decoded[63]), .Q(n681) );
+  NOR2P3_X1_18_SVT U1023 ( .A(n489), .B(n683), .Q(BL_S[62]) );
+  CLKINV_X1_18_SVT U1024 ( .A(bl_decoded[62]), .Q(n683) );
+  NOR2P3_X1_18_SVT U1025 ( .A(n489), .B(n685), .Q(BL_S[61]) );
+  CLKINV_X1_18_SVT U1026 ( .A(bl_decoded[61]), .Q(n685) );
+  NOR2P3_X1_18_SVT U1027 ( .A(n489), .B(n687), .Q(BL_S[60]) );
+  CLKINV_X1_18_SVT U1028 ( .A(bl_decoded[60]), .Q(n687) );
+  NOR2P3_X1_18_SVT U1029 ( .A(n489), .B(n755), .Q(BL_S[5]) );
+  CLKINV_X1_18_SVT U1030 ( .A(bl_decoded[5]), .Q(n755) );
+  NOR2P3_X1_18_SVT U1031 ( .A(n489), .B(n689), .Q(BL_S[59]) );
+  CLKINV_X1_18_SVT U1032 ( .A(bl_decoded[59]), .Q(n689) );
+  NOR2P3_X1_18_SVT U1033 ( .A(n489), .B(n691), .Q(BL_S[58]) );
+  CLKINV_X1_18_SVT U1034 ( .A(bl_decoded[58]), .Q(n691) );
+  NOR2P3_X1_18_SVT U1035 ( .A(n489), .B(n693), .Q(BL_S[57]) );
+  CLKINV_X1_18_SVT U1036 ( .A(bl_decoded[57]), .Q(n693) );
+  NOR2P3_X1_18_SVT U1037 ( .A(n489), .B(n695), .Q(BL_S[56]) );
+  CLKINV_X1_18_SVT U1038 ( .A(bl_decoded[56]), .Q(n695) );
+  NOR2P3_X1_18_SVT U1039 ( .A(n490), .B(n698), .Q(BL_S[55]) );
+  CLKINV_X1_18_SVT U1040 ( .A(bl_decoded[55]), .Q(n698) );
+  NOR2P3_X1_18_SVT U1041 ( .A(n490), .B(n699), .Q(BL_S[54]) );
+  CLKINV_X1_18_SVT U1042 ( .A(bl_decoded[54]), .Q(n699) );
+  NOR2P3_X1_18_SVT U1043 ( .A(n490), .B(n700), .Q(BL_S[53]) );
+  CLKINV_X1_18_SVT U1044 ( .A(bl_decoded[53]), .Q(n700) );
+  NOR2P3_X1_18_SVT U1045 ( .A(n490), .B(n701), .Q(BL_S[52]) );
+  CLKINV_X1_18_SVT U1046 ( .A(bl_decoded[52]), .Q(n701) );
+  NOR2P3_X1_18_SVT U1047 ( .A(n490), .B(n702), .Q(BL_S[51]) );
+  CLKINV_X1_18_SVT U1048 ( .A(bl_decoded[51]), .Q(n702) );
+  NOR2P3_X1_18_SVT U1049 ( .A(n490), .B(n703), .Q(BL_S[50]) );
+  CLKINV_X1_18_SVT U1050 ( .A(bl_decoded[50]), .Q(n703) );
+  NOR2P3_X1_18_SVT U1051 ( .A(n490), .B(n756), .Q(BL_S[4]) );
+  CLKINV_X1_18_SVT U1052 ( .A(bl_decoded[4]), .Q(n756) );
+  NOR2P3_X1_18_SVT U1053 ( .A(n490), .B(n704), .Q(BL_S[49]) );
+  CLKINV_X1_18_SVT U1054 ( .A(bl_decoded[49]), .Q(n704) );
+  NOR2P3_X1_18_SVT U1055 ( .A(n490), .B(n705), .Q(BL_S[48]) );
+  CLKINV_X1_18_SVT U1056 ( .A(bl_decoded[48]), .Q(n705) );
+  NOR2P3_X1_18_SVT U1057 ( .A(n490), .B(n707), .Q(BL_S[47]) );
+  CLKINV_X1_18_SVT U1058 ( .A(bl_decoded[47]), .Q(n707) );
+  NOR2P3_X1_18_SVT U1059 ( .A(n490), .B(n708), .Q(BL_S[46]) );
+  CLKINV_X1_18_SVT U1060 ( .A(bl_decoded[46]), .Q(n708) );
+  NOR2P3_X1_18_SVT U1061 ( .A(n490), .B(n709), .Q(BL_S[45]) );
+  CLKINV_X1_18_SVT U1062 ( .A(bl_decoded[45]), .Q(n709) );
+  NOR2P3_X1_18_SVT U1063 ( .A(n490), .B(n710), .Q(BL_S[44]) );
+  CLKINV_X1_18_SVT U1064 ( .A(bl_decoded[44]), .Q(n710) );
+  NOR2P3_X1_18_SVT U1065 ( .A(n491), .B(n711), .Q(BL_S[43]) );
+  CLKINV_X1_18_SVT U1066 ( .A(bl_decoded[43]), .Q(n711) );
+  NOR2P3_X1_18_SVT U1067 ( .A(n491), .B(n712), .Q(BL_S[42]) );
+  CLKINV_X1_18_SVT U1068 ( .A(bl_decoded[42]), .Q(n712) );
+  NOR2P3_X1_18_SVT U1069 ( .A(n491), .B(n713), .Q(BL_S[41]) );
+  CLKINV_X1_18_SVT U1070 ( .A(bl_decoded[41]), .Q(n713) );
+  NOR2P3_X1_18_SVT U1071 ( .A(n491), .B(n714), .Q(BL_S[40]) );
+  CLKINV_X1_18_SVT U1072 ( .A(bl_decoded[40]), .Q(n714) );
+  NOR2P3_X1_18_SVT U1073 ( .A(n491), .B(n757), .Q(BL_S[3]) );
+  CLKINV_X1_18_SVT U1074 ( .A(bl_decoded[3]), .Q(n757) );
+  NOR2P3_X1_18_SVT U1075 ( .A(n491), .B(n716), .Q(BL_S[39]) );
+  CLKINV_X1_18_SVT U1076 ( .A(bl_decoded[39]), .Q(n716) );
+  NOR2P3_X1_18_SVT U1077 ( .A(n491), .B(n717), .Q(BL_S[38]) );
+  CLKINV_X1_18_SVT U1078 ( .A(bl_decoded[38]), .Q(n717) );
+  NOR2P3_X1_18_SVT U1079 ( .A(n491), .B(n718), .Q(BL_S[37]) );
+  CLKINV_X1_18_SVT U1080 ( .A(bl_decoded[37]), .Q(n718) );
+  NOR2P3_X1_18_SVT U1081 ( .A(n491), .B(n719), .Q(BL_S[36]) );
+  CLKINV_X1_18_SVT U1082 ( .A(bl_decoded[36]), .Q(n719) );
+  NOR2P3_X1_18_SVT U1083 ( .A(n491), .B(n720), .Q(BL_S[35]) );
+  CLKINV_X1_18_SVT U1084 ( .A(bl_decoded[35]), .Q(n720) );
+  NOR2P3_X1_18_SVT U1085 ( .A(n491), .B(n721), .Q(BL_S[34]) );
+  CLKINV_X1_18_SVT U1086 ( .A(bl_decoded[34]), .Q(n721) );
+  NOR2P3_X1_18_SVT U1087 ( .A(n491), .B(n722), .Q(BL_S[33]) );
+  CLKINV_X1_18_SVT U1088 ( .A(bl_decoded[33]), .Q(n722) );
+  NOR2P3_X1_18_SVT U1089 ( .A(n491), .B(n723), .Q(BL_S[32]) );
+  CLKINV_X1_18_SVT U1090 ( .A(bl_decoded[32]), .Q(n723) );
+  NOR2P3_X1_18_SVT U1091 ( .A(n492), .B(n725), .Q(BL_S[31]) );
+  CLKINV_X1_18_SVT U1092 ( .A(bl_decoded[31]), .Q(n725) );
+  NOR2P3_X1_18_SVT U1093 ( .A(n492), .B(n726), .Q(BL_S[30]) );
+  CLKINV_X1_18_SVT U1094 ( .A(bl_decoded[30]), .Q(n726) );
+  NOR2P3_X1_18_SVT U1095 ( .A(n492), .B(n758), .Q(BL_S[2]) );
+  CLKINV_X1_18_SVT U1096 ( .A(bl_decoded[2]), .Q(n758) );
+  NOR2P3_X1_18_SVT U1097 ( .A(n492), .B(n727), .Q(BL_S[29]) );
+  CLKINV_X1_18_SVT U1098 ( .A(bl_decoded[29]), .Q(n727) );
+  NOR2P3_X1_18_SVT U1099 ( .A(n492), .B(n728), .Q(BL_S[28]) );
+  CLKINV_X1_18_SVT U1100 ( .A(bl_decoded[28]), .Q(n728) );
+  NOR2P3_X1_18_SVT U1101 ( .A(n492), .B(n729), .Q(BL_S[27]) );
+  CLKINV_X1_18_SVT U1102 ( .A(bl_decoded[27]), .Q(n729) );
+  NOR2P3_X1_18_SVT U1103 ( .A(n492), .B(n730), .Q(BL_S[26]) );
+  CLKINV_X1_18_SVT U1104 ( .A(bl_decoded[26]), .Q(n730) );
+  NOR2P3_X1_18_SVT U1105 ( .A(n492), .B(n731), .Q(BL_S[25]) );
+  CLKINV_X1_18_SVT U1106 ( .A(bl_decoded[25]), .Q(n731) );
+  NOR2P3_X1_18_SVT U1107 ( .A(n492), .B(n732), .Q(BL_S[24]) );
+  CLKINV_X1_18_SVT U1108 ( .A(bl_decoded[24]), .Q(n732) );
+  NOR2P3_X1_18_SVT U1109 ( .A(n492), .B(n735), .Q(BL_S[23]) );
+  CLKINV_X1_18_SVT U1110 ( .A(bl_decoded[23]), .Q(n735) );
+  NOR2P3_X1_18_SVT U1111 ( .A(n492), .B(n736), .Q(BL_S[22]) );
+  CLKINV_X1_18_SVT U1112 ( .A(bl_decoded[22]), .Q(n736) );
+  NOR2P3_X1_18_SVT U1113 ( .A(n492), .B(n737), .Q(BL_S[21]) );
+  CLKINV_X1_18_SVT U1114 ( .A(bl_decoded[21]), .Q(n737) );
+  NOR2P3_X1_18_SVT U1115 ( .A(n492), .B(n738), .Q(BL_S[20]) );
+  CLKINV_X1_18_SVT U1116 ( .A(bl_decoded[20]), .Q(n738) );
+  NOR2P3_X1_18_SVT U1117 ( .A(n493), .B(n759), .Q(BL_S[1]) );
+  CLKINV_X1_18_SVT U1118 ( .A(bl_decoded[1]), .Q(n759) );
+  NOR2P3_X1_18_SVT U1119 ( .A(n493), .B(n739), .Q(BL_S[19]) );
+  CLKINV_X1_18_SVT U1120 ( .A(bl_decoded[19]), .Q(n739) );
+  NOR2P3_X1_18_SVT U1121 ( .A(n493), .B(n740), .Q(BL_S[18]) );
+  CLKINV_X1_18_SVT U1122 ( .A(bl_decoded[18]), .Q(n740) );
+  NOR2P3_X1_18_SVT U1123 ( .A(n493), .B(n741), .Q(BL_S[17]) );
+  CLKINV_X1_18_SVT U1124 ( .A(bl_decoded[17]), .Q(n741) );
+  NOR2P3_X1_18_SVT U1125 ( .A(n493), .B(n742), .Q(BL_S[16]) );
+  CLKINV_X1_18_SVT U1126 ( .A(bl_decoded[16]), .Q(n742) );
+  NOR2P3_X1_18_SVT U1127 ( .A(n493), .B(n744), .Q(BL_S[15]) );
+  CLKINV_X1_18_SVT U1128 ( .A(bl_decoded[15]), .Q(n744) );
+  NOR2P3_X1_18_SVT U1129 ( .A(n493), .B(n745), .Q(BL_S[14]) );
+  CLKINV_X1_18_SVT U1130 ( .A(bl_decoded[14]), .Q(n745) );
+  NOR2P3_X1_18_SVT U1131 ( .A(n493), .B(n746), .Q(BL_S[13]) );
+  CLKINV_X1_18_SVT U1132 ( .A(bl_decoded[13]), .Q(n746) );
+  NOR2P3_X1_18_SVT U1133 ( .A(n493), .B(n747), .Q(BL_S[12]) );
+  CLKINV_X1_18_SVT U1134 ( .A(bl_decoded[12]), .Q(n747) );
+  NOR2P3_X1_18_SVT U1135 ( .A(n493), .B(n748), .Q(BL_S[11]) );
+  CLKINV_X1_18_SVT U1136 ( .A(bl_decoded[11]), .Q(n748) );
+  NOR2P3_X1_18_SVT U1137 ( .A(n493), .B(n749), .Q(BL_S[10]) );
+  CLKINV_X1_18_SVT U1138 ( .A(bl_decoded[10]), .Q(n749) );
+  NOR2P3_X1_18_SVT U1139 ( .A(n493), .B(n760), .Q(BL_S[0]) );
+  CLKINV_X1_18_SVT U1140 ( .A(bl_decoded[0]), .Q(n760) );
+  CLKNAND2_X2_18_SVT U1141 ( .A(n504), .B(WL_Enable), .Q(n766) );
+  CLKNAND2_X2_18_SVT U1142 ( .A(n504), .B(n764), .Q(WL_Enable) );
+  CLKINV_X1_18_SVT U1143 ( .A(WL_Zero), .Q(n764) );
+  NOR4_X0_18_SVT U1144 ( .A(n538), .B(n551), .C(n534), .D(current_state[3]), 
         .Q(WL_Zero) );
-  CLKINV_X1_18_SVT U1144 ( .A(n516), .Q(n534) );
-  CLKNAND2_X2_18_SVT U1145 ( .A(current_state[1]), .B(current_state[0]), .Q(
+  CLKINV_X1_18_SVT U1145 ( .A(n516), .Q(n534) );
+  CLKNAND2_X2_18_SVT U1146 ( .A(current_state[1]), .B(current_state[0]), .Q(
         n516) );
-  NOR2P3_X1_18_SVT U1146 ( .A(current_state[0]), .B(current_state[1]), .Q(n551) );
-  CLKNAND2_X2_18_SVT U1147 ( .A(current_state[1]), .B(n535), .Q(n504) );
-  CLKINV_X1_18_SVT U1148 ( .A(n566), .Q(n535) );
-  CLKNAND2_X2_18_SVT U1149 ( .A(n538), .B(n518), .Q(n566) );
-  CLKINV_X1_18_SVT U1150 ( .A(current_state[3]), .Q(n518) );
-  CLKINV_X1_18_SVT U1151 ( .A(current_state[2]), .Q(n538) );
+  NOR2P3_X1_18_SVT U1147 ( .A(current_state[0]), .B(current_state[1]), .Q(n551) );
+  CLKNAND2_X2_18_SVT U1148 ( .A(current_state[1]), .B(n535), .Q(n504) );
+  CLKINV_X1_18_SVT U1149 ( .A(n566), .Q(n535) );
+  CLKNAND2_X2_18_SVT U1150 ( .A(n538), .B(n518), .Q(n566) );
+  CLKINV_X1_18_SVT U1151 ( .A(current_state[3]), .Q(n518) );
+  CLKINV_X1_18_SVT U1152 ( .A(current_state[2]), .Q(n538) );
 endmodule
 

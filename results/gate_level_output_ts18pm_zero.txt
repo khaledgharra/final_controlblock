@@ -1,5 +1,89 @@
-TOOL:	xrun(64)	24.03-s004: Started on Nov 11, 2026 at 16:14:27 IST
+TOOL:	xrun(64)	24.03-s004: Started on Nov 11, 2026 at 16:24:24 IST
 xrun(64): 24.03-s004: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+file: Control_syn.v
+	module worklib.Control:v
+		errors: 0, warnings: 0
+file: tb_Control.sv
+	module worklib.tb_Control:sv
+		errors: 0, warnings: 0
+file: /tools/kits/tower/TS18PM_1/tsl18fs190svt_Rev_2019.09/lib/verilog/tsl18fs190svt.v
+	module tsl18fs190svt.AOI21_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.AOI22_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.AOI31_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.AOI32_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.BUF_X2_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.CLKINV_X1_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.CLKNAND2_X2_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.DFFRQ_X2_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.DFFSQ_X2_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.INV_A_NAND2_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.INV_A_NAND3_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.INV_A_NOR2_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.INV_A_NOR3_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.INV_A_OAI211_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.INV_B_AOI21_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.INV_X2_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.MUXI2D_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.MUX2_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.NAND2_A_NOR3_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.NAND2_X2_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.NAND3T_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.NAND4T_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.NAND4_X2_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.NOR2_A_AOI21_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.NOR2_A_NOR2_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.NOR2P3_X1_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.NOR3_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.NOR4_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.OAI12P2_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.OAI22_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.OAI31_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.OAI211_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.OAI221_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.OA21_X0_18_SVT:v
+		errors: 0, warnings: 0
+	module tsl18fs190svt.OR2_X1_18_SVT:v
+		errors: 0, warnings: 0
+file: /tools/kits/tower/TS18PM_1/tsl18fs190svt_Rev_2019.09/lib/verilog/tsl18fs190svt_udp.v
+	primitive tsl18fs190svt_udp.seq_DFFRQ_X2_18_SVT:v
+		errors: 0, warnings: 0
+	primitive tsl18fs190svt_udp.seq_DFFSQ_X2_18_SVT:v
+		errors: 0, warnings: 0
+	primitive tsl18fs190svt_udp.ng_xbuf:v
+		errors: 0, warnings: 0
 		Caching library 'tsl18fs190svt' ....... Done
 		Caching library 'tsl18fs190svt_udp' ....... Done
 		Caching library 'worklib' ....... Done
@@ -8,7 +92,7 @@ xrun(64): 24.03-s004: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
 		tb_Control
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.Control:v <0x7ed3392c>
+		worklib.Control:v <0x32d41f9d>
 			streams:   0, words:     0
 		worklib.tb_Control:sv <0x39756a4b>
 			streams:  22, words: 31017
@@ -52,9 +136,9 @@ xrun(64): 24.03-s004: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                   Instances  Unique
-		Modules:                 732      37
+		Modules:                 733      37
 		UDPs:                    308       3
-		Primitives:            2,043       4
+		Primitives:            2,044       4
 		Registers:               189      39
 		Scalar wires:            164       -
 		Expanded wires:          131       4
@@ -71,4 +155,4 @@ xcelium> run
 Simulation complete via $finish(1) at time 9140 NS + 0
 ./tb_Control.sv:176         $finish;
 xcelium> exit
-TOOL:	xrun(64)	24.03-s004: Exiting on Nov 11, 2026 at 16:14:28 IST  (total: 00:00:01)
+TOOL:	xrun(64)	24.03-s004: Exiting on Nov 11, 2026 at 16:24:25 IST  (total: 00:00:01)

@@ -41,6 +41,7 @@ set_input_delay  0 -clock $CLK_NAME [remove_from_collection [all_inputs] [get_po
 set_output_delay 0 -clock $CLK_NAME [all_outputs]
 
 # Synthesis - same basic idea as the i2c backend lab
+set_load 0.05 [all_outputs]
 compile -exact_map
 
 # Reports

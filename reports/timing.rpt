@@ -7,7 +7,7 @@ Report : timing
         -max_paths 10
 Design : Control
 Version: R-2020.09-SP2
-Date   : Wed Nov 11 16:11:27 2026
+Date   : Wed Nov 11 16:23:38 2026
 ****************************************
 
 Operating Conditions: tt_1p8v_25c   Library: tsl18fs190svt_tt_1p8v_25c
@@ -15,8 +15,7 @@ Wire Load Model Mode: top
 
   Startpoint: current_state_reg[2]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: wl_decoded_reg[22]
-            (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: BL_S[26] (output port clocked by clk)
   Path Group: clk
   Path Type: max
 
@@ -25,33 +24,32 @@ Wire Load Model Mode: top
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   current_state_reg[2]/CK (DFFRQ_X2_18_SVT)               0.00       0.00 r
-  current_state_reg[2]/Q (DFFRQ_X2_18_SVT)                0.32       0.32 f
-  U1151/Q (CLKINV_X1_18_SVT)                              0.13       0.45 r
-  U1149/Q (CLKNAND2_X2_18_SVT)                            0.13       0.58 f
-  U786/Q (NAND2_A_NOR3_X0_18_SVT)                         1.01       1.59 r
-  U783/Q (INV_A_NOR2_X0_18_SVT)                           0.23       1.82 r
-  U753/Q (INV_A_NOR2_X0_18_SVT)                           0.33       2.15 r
-  U752/Q (INV_A_NOR3_X0_18_SVT)                           0.50       2.65 r
-  U744/Q (AOI22_X0_18_SVT)                                0.08       2.73 f
-  wl_decoded_reg[22]/D (DFFSQ_X2_18_SVT)                  0.00       2.73 f
-  data arrival time                                                  2.73
+  current_state_reg[2]/Q (DFFRQ_X2_18_SVT)                0.39       0.39 r
+  U1152/Q (CLKINV_X1_18_SVT)                              0.18       0.57 f
+  U1144/Q (NOR4_X0_18_SVT)                                2.51       3.08 r
+  U1143/Q (CLKINV_X1_18_SVT)                              0.43       3.51 f
+  U1142/Q (CLKNAND2_X2_18_SVT)                            0.63       4.14 r
+  U1141/Q (CLKNAND2_X2_18_SVT)                            0.16       4.30 f
+  U580/Q (BUF_X2_18_SVT)                                  0.15       4.46 f
+  U576/Q (BUF_X2_18_SVT)                                  0.16       4.62 f
+  U1103/Q (NOR2P3_X1_18_SVT)                              0.78       5.40 r
+  BL_S[26] (out)                                          0.00       5.40 r
+  data arrival time                                                  5.40
 
   clock clk (rise edge)                                  10.00      10.00
   clock network delay (ideal)                             0.00      10.00
-  wl_decoded_reg[22]/CK (DFFSQ_X2_18_SVT)                 0.00      10.00 r
-  library setup time                                     -0.12       9.88
-  data required time                                                 9.88
+  output external delay                                   0.00      10.00
+  data required time                                                10.00
   --------------------------------------------------------------------------
-  data required time                                                 9.88
-  data arrival time                                                 -2.73
+  data required time                                                10.00
+  data arrival time                                                 -5.40
   --------------------------------------------------------------------------
-  slack (MET)                                                        7.15
+  slack (MET)                                                        4.60
 
 
   Startpoint: current_state_reg[2]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: wl_decoded_reg[20]
-            (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: BL_S[25] (output port clocked by clk)
   Path Group: clk
   Path Type: max
 
@@ -60,33 +58,32 @@ Wire Load Model Mode: top
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   current_state_reg[2]/CK (DFFRQ_X2_18_SVT)               0.00       0.00 r
-  current_state_reg[2]/Q (DFFRQ_X2_18_SVT)                0.32       0.32 f
-  U1151/Q (CLKINV_X1_18_SVT)                              0.13       0.45 r
-  U1149/Q (CLKNAND2_X2_18_SVT)                            0.13       0.58 f
-  U786/Q (NAND2_A_NOR3_X0_18_SVT)                         1.01       1.59 r
-  U783/Q (INV_A_NOR2_X0_18_SVT)                           0.23       1.82 r
-  U753/Q (INV_A_NOR2_X0_18_SVT)                           0.33       2.15 r
-  U752/Q (INV_A_NOR3_X0_18_SVT)                           0.50       2.65 r
-  U746/Q (AOI22_X0_18_SVT)                                0.08       2.73 f
-  wl_decoded_reg[20]/D (DFFSQ_X2_18_SVT)                  0.00       2.73 f
-  data arrival time                                                  2.73
+  current_state_reg[2]/Q (DFFRQ_X2_18_SVT)                0.39       0.39 r
+  U1152/Q (CLKINV_X1_18_SVT)                              0.18       0.57 f
+  U1144/Q (NOR4_X0_18_SVT)                                2.51       3.08 r
+  U1143/Q (CLKINV_X1_18_SVT)                              0.43       3.51 f
+  U1142/Q (CLKNAND2_X2_18_SVT)                            0.63       4.14 r
+  U1141/Q (CLKNAND2_X2_18_SVT)                            0.16       4.30 f
+  U580/Q (BUF_X2_18_SVT)                                  0.15       4.46 f
+  U576/Q (BUF_X2_18_SVT)                                  0.16       4.62 f
+  U1105/Q (NOR2P3_X1_18_SVT)                              0.78       5.40 r
+  BL_S[25] (out)                                          0.00       5.40 r
+  data arrival time                                                  5.40
 
   clock clk (rise edge)                                  10.00      10.00
   clock network delay (ideal)                             0.00      10.00
-  wl_decoded_reg[20]/CK (DFFSQ_X2_18_SVT)                 0.00      10.00 r
-  library setup time                                     -0.12       9.88
-  data required time                                                 9.88
+  output external delay                                   0.00      10.00
+  data required time                                                10.00
   --------------------------------------------------------------------------
-  data required time                                                 9.88
-  data arrival time                                                 -2.73
+  data required time                                                10.00
+  data arrival time                                                 -5.40
   --------------------------------------------------------------------------
-  slack (MET)                                                        7.15
+  slack (MET)                                                        4.60
 
 
   Startpoint: current_state_reg[2]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: wl_decoded_reg[18]
-            (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: BL_S[24] (output port clocked by clk)
   Path Group: clk
   Path Type: max
 
@@ -95,33 +92,32 @@ Wire Load Model Mode: top
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   current_state_reg[2]/CK (DFFRQ_X2_18_SVT)               0.00       0.00 r
-  current_state_reg[2]/Q (DFFRQ_X2_18_SVT)                0.32       0.32 f
-  U1151/Q (CLKINV_X1_18_SVT)                              0.13       0.45 r
-  U1149/Q (CLKNAND2_X2_18_SVT)                            0.13       0.58 f
-  U786/Q (NAND2_A_NOR3_X0_18_SVT)                         1.01       1.59 r
-  U783/Q (INV_A_NOR2_X0_18_SVT)                           0.23       1.82 r
-  U753/Q (INV_A_NOR2_X0_18_SVT)                           0.33       2.15 r
-  U752/Q (INV_A_NOR3_X0_18_SVT)                           0.50       2.65 r
-  U748/Q (AOI22_X0_18_SVT)                                0.08       2.73 f
-  wl_decoded_reg[18]/D (DFFSQ_X2_18_SVT)                  0.00       2.73 f
-  data arrival time                                                  2.73
+  current_state_reg[2]/Q (DFFRQ_X2_18_SVT)                0.39       0.39 r
+  U1152/Q (CLKINV_X1_18_SVT)                              0.18       0.57 f
+  U1144/Q (NOR4_X0_18_SVT)                                2.51       3.08 r
+  U1143/Q (CLKINV_X1_18_SVT)                              0.43       3.51 f
+  U1142/Q (CLKNAND2_X2_18_SVT)                            0.63       4.14 r
+  U1141/Q (CLKNAND2_X2_18_SVT)                            0.16       4.30 f
+  U580/Q (BUF_X2_18_SVT)                                  0.15       4.46 f
+  U576/Q (BUF_X2_18_SVT)                                  0.16       4.62 f
+  U1107/Q (NOR2P3_X1_18_SVT)                              0.78       5.40 r
+  BL_S[24] (out)                                          0.00       5.40 r
+  data arrival time                                                  5.40
 
   clock clk (rise edge)                                  10.00      10.00
   clock network delay (ideal)                             0.00      10.00
-  wl_decoded_reg[18]/CK (DFFSQ_X2_18_SVT)                 0.00      10.00 r
-  library setup time                                     -0.12       9.88
-  data required time                                                 9.88
+  output external delay                                   0.00      10.00
+  data required time                                                10.00
   --------------------------------------------------------------------------
-  data required time                                                 9.88
-  data arrival time                                                 -2.73
+  data required time                                                10.00
+  data arrival time                                                 -5.40
   --------------------------------------------------------------------------
-  slack (MET)                                                        7.15
+  slack (MET)                                                        4.60
 
 
   Startpoint: current_state_reg[2]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: wl_decoded_reg[16]
-            (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: BL_S[23] (output port clocked by clk)
   Path Group: clk
   Path Type: max
 
@@ -130,33 +126,32 @@ Wire Load Model Mode: top
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   current_state_reg[2]/CK (DFFRQ_X2_18_SVT)               0.00       0.00 r
-  current_state_reg[2]/Q (DFFRQ_X2_18_SVT)                0.32       0.32 f
-  U1151/Q (CLKINV_X1_18_SVT)                              0.13       0.45 r
-  U1149/Q (CLKNAND2_X2_18_SVT)                            0.13       0.58 f
-  U786/Q (NAND2_A_NOR3_X0_18_SVT)                         1.01       1.59 r
-  U783/Q (INV_A_NOR2_X0_18_SVT)                           0.23       1.82 r
-  U753/Q (INV_A_NOR2_X0_18_SVT)                           0.33       2.15 r
-  U752/Q (INV_A_NOR3_X0_18_SVT)                           0.50       2.65 r
-  U751/Q (AOI22_X0_18_SVT)                                0.08       2.73 f
-  wl_decoded_reg[16]/D (DFFSQ_X2_18_SVT)                  0.00       2.73 f
-  data arrival time                                                  2.73
+  current_state_reg[2]/Q (DFFRQ_X2_18_SVT)                0.39       0.39 r
+  U1152/Q (CLKINV_X1_18_SVT)                              0.18       0.57 f
+  U1144/Q (NOR4_X0_18_SVT)                                2.51       3.08 r
+  U1143/Q (CLKINV_X1_18_SVT)                              0.43       3.51 f
+  U1142/Q (CLKNAND2_X2_18_SVT)                            0.63       4.14 r
+  U1141/Q (CLKNAND2_X2_18_SVT)                            0.16       4.30 f
+  U580/Q (BUF_X2_18_SVT)                                  0.15       4.46 f
+  U576/Q (BUF_X2_18_SVT)                                  0.16       4.62 f
+  U1109/Q (NOR2P3_X1_18_SVT)                              0.78       5.40 r
+  BL_S[23] (out)                                          0.00       5.40 r
+  data arrival time                                                  5.40
 
   clock clk (rise edge)                                  10.00      10.00
   clock network delay (ideal)                             0.00      10.00
-  wl_decoded_reg[16]/CK (DFFSQ_X2_18_SVT)                 0.00      10.00 r
-  library setup time                                     -0.12       9.88
-  data required time                                                 9.88
+  output external delay                                   0.00      10.00
+  data required time                                                10.00
   --------------------------------------------------------------------------
-  data required time                                                 9.88
-  data arrival time                                                 -2.73
+  data required time                                                10.00
+  data arrival time                                                 -5.40
   --------------------------------------------------------------------------
-  slack (MET)                                                        7.15
+  slack (MET)                                                        4.60
 
 
   Startpoint: current_state_reg[2]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: wl_decoded_reg[6]
-            (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: BL_S[22] (output port clocked by clk)
   Path Group: clk
   Path Type: max
 
@@ -165,33 +160,32 @@ Wire Load Model Mode: top
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   current_state_reg[2]/CK (DFFRQ_X2_18_SVT)               0.00       0.00 r
-  current_state_reg[2]/Q (DFFRQ_X2_18_SVT)                0.32       0.32 f
-  U1151/Q (CLKINV_X1_18_SVT)                              0.13       0.45 r
-  U1149/Q (CLKNAND2_X2_18_SVT)                            0.13       0.58 f
-  U786/Q (NAND2_A_NOR3_X0_18_SVT)                         1.01       1.59 r
-  U783/Q (INV_A_NOR2_X0_18_SVT)                           0.23       1.82 r
-  U782/Q (INV_A_NOR2_X0_18_SVT)                           0.33       2.15 r
-  U781/Q (INV_A_NOR3_X0_18_SVT)                           0.50       2.65 r
-  U767/Q (AOI22_X0_18_SVT)                                0.08       2.73 f
-  wl_decoded_reg[6]/D (DFFSQ_X2_18_SVT)                   0.00       2.73 f
-  data arrival time                                                  2.73
+  current_state_reg[2]/Q (DFFRQ_X2_18_SVT)                0.39       0.39 r
+  U1152/Q (CLKINV_X1_18_SVT)                              0.18       0.57 f
+  U1144/Q (NOR4_X0_18_SVT)                                2.51       3.08 r
+  U1143/Q (CLKINV_X1_18_SVT)                              0.43       3.51 f
+  U1142/Q (CLKNAND2_X2_18_SVT)                            0.63       4.14 r
+  U1141/Q (CLKNAND2_X2_18_SVT)                            0.16       4.30 f
+  U580/Q (BUF_X2_18_SVT)                                  0.15       4.46 f
+  U576/Q (BUF_X2_18_SVT)                                  0.16       4.62 f
+  U1111/Q (NOR2P3_X1_18_SVT)                              0.78       5.40 r
+  BL_S[22] (out)                                          0.00       5.40 r
+  data arrival time                                                  5.40
 
   clock clk (rise edge)                                  10.00      10.00
   clock network delay (ideal)                             0.00      10.00
-  wl_decoded_reg[6]/CK (DFFSQ_X2_18_SVT)                  0.00      10.00 r
-  library setup time                                     -0.12       9.88
-  data required time                                                 9.88
+  output external delay                                   0.00      10.00
+  data required time                                                10.00
   --------------------------------------------------------------------------
-  data required time                                                 9.88
-  data arrival time                                                 -2.73
+  data required time                                                10.00
+  data arrival time                                                 -5.40
   --------------------------------------------------------------------------
-  slack (MET)                                                        7.15
+  slack (MET)                                                        4.60
 
 
   Startpoint: current_state_reg[2]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: wl_decoded_reg[4]
-            (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: BL_S[21] (output port clocked by clk)
   Path Group: clk
   Path Type: max
 
@@ -200,33 +194,32 @@ Wire Load Model Mode: top
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   current_state_reg[2]/CK (DFFRQ_X2_18_SVT)               0.00       0.00 r
-  current_state_reg[2]/Q (DFFRQ_X2_18_SVT)                0.32       0.32 f
-  U1151/Q (CLKINV_X1_18_SVT)                              0.13       0.45 r
-  U1149/Q (CLKNAND2_X2_18_SVT)                            0.13       0.58 f
-  U786/Q (NAND2_A_NOR3_X0_18_SVT)                         1.01       1.59 r
-  U783/Q (INV_A_NOR2_X0_18_SVT)                           0.23       1.82 r
-  U782/Q (INV_A_NOR2_X0_18_SVT)                           0.33       2.15 r
-  U781/Q (INV_A_NOR3_X0_18_SVT)                           0.50       2.65 r
-  U770/Q (AOI22_X0_18_SVT)                                0.08       2.73 f
-  wl_decoded_reg[4]/D (DFFSQ_X2_18_SVT)                   0.00       2.73 f
-  data arrival time                                                  2.73
+  current_state_reg[2]/Q (DFFRQ_X2_18_SVT)                0.39       0.39 r
+  U1152/Q (CLKINV_X1_18_SVT)                              0.18       0.57 f
+  U1144/Q (NOR4_X0_18_SVT)                                2.51       3.08 r
+  U1143/Q (CLKINV_X1_18_SVT)                              0.43       3.51 f
+  U1142/Q (CLKNAND2_X2_18_SVT)                            0.63       4.14 r
+  U1141/Q (CLKNAND2_X2_18_SVT)                            0.16       4.30 f
+  U580/Q (BUF_X2_18_SVT)                                  0.15       4.46 f
+  U576/Q (BUF_X2_18_SVT)                                  0.16       4.62 f
+  U1113/Q (NOR2P3_X1_18_SVT)                              0.78       5.40 r
+  BL_S[21] (out)                                          0.00       5.40 r
+  data arrival time                                                  5.40
 
   clock clk (rise edge)                                  10.00      10.00
   clock network delay (ideal)                             0.00      10.00
-  wl_decoded_reg[4]/CK (DFFSQ_X2_18_SVT)                  0.00      10.00 r
-  library setup time                                     -0.12       9.88
-  data required time                                                 9.88
+  output external delay                                   0.00      10.00
+  data required time                                                10.00
   --------------------------------------------------------------------------
-  data required time                                                 9.88
-  data arrival time                                                 -2.73
+  data required time                                                10.00
+  data arrival time                                                 -5.40
   --------------------------------------------------------------------------
-  slack (MET)                                                        7.15
+  slack (MET)                                                        4.60
 
 
   Startpoint: current_state_reg[2]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: wl_decoded_reg[2]
-            (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: BL_S[20] (output port clocked by clk)
   Path Group: clk
   Path Type: max
 
@@ -235,33 +228,32 @@ Wire Load Model Mode: top
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   current_state_reg[2]/CK (DFFRQ_X2_18_SVT)               0.00       0.00 r
-  current_state_reg[2]/Q (DFFRQ_X2_18_SVT)                0.32       0.32 f
-  U1151/Q (CLKINV_X1_18_SVT)                              0.13       0.45 r
-  U1149/Q (CLKNAND2_X2_18_SVT)                            0.13       0.58 f
-  U786/Q (NAND2_A_NOR3_X0_18_SVT)                         1.01       1.59 r
-  U783/Q (INV_A_NOR2_X0_18_SVT)                           0.23       1.82 r
-  U782/Q (INV_A_NOR2_X0_18_SVT)                           0.33       2.15 r
-  U781/Q (INV_A_NOR3_X0_18_SVT)                           0.50       2.65 r
-  U774/Q (AOI22_X0_18_SVT)                                0.08       2.73 f
-  wl_decoded_reg[2]/D (DFFSQ_X2_18_SVT)                   0.00       2.73 f
-  data arrival time                                                  2.73
+  current_state_reg[2]/Q (DFFRQ_X2_18_SVT)                0.39       0.39 r
+  U1152/Q (CLKINV_X1_18_SVT)                              0.18       0.57 f
+  U1144/Q (NOR4_X0_18_SVT)                                2.51       3.08 r
+  U1143/Q (CLKINV_X1_18_SVT)                              0.43       3.51 f
+  U1142/Q (CLKNAND2_X2_18_SVT)                            0.63       4.14 r
+  U1141/Q (CLKNAND2_X2_18_SVT)                            0.16       4.30 f
+  U580/Q (BUF_X2_18_SVT)                                  0.15       4.46 f
+  U576/Q (BUF_X2_18_SVT)                                  0.16       4.62 f
+  U1115/Q (NOR2P3_X1_18_SVT)                              0.78       5.40 r
+  BL_S[20] (out)                                          0.00       5.40 r
+  data arrival time                                                  5.40
 
   clock clk (rise edge)                                  10.00      10.00
   clock network delay (ideal)                             0.00      10.00
-  wl_decoded_reg[2]/CK (DFFSQ_X2_18_SVT)                  0.00      10.00 r
-  library setup time                                     -0.12       9.88
-  data required time                                                 9.88
+  output external delay                                   0.00      10.00
+  data required time                                                10.00
   --------------------------------------------------------------------------
-  data required time                                                 9.88
-  data arrival time                                                 -2.73
+  data required time                                                10.00
+  data arrival time                                                 -5.40
   --------------------------------------------------------------------------
-  slack (MET)                                                        7.15
+  slack (MET)                                                        4.60
 
 
   Startpoint: current_state_reg[2]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: wl_decoded_reg[0]
-            (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: BL_S[4] (output port clocked by clk)
   Path Group: clk
   Path Type: max
 
@@ -270,33 +262,32 @@ Wire Load Model Mode: top
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   current_state_reg[2]/CK (DFFRQ_X2_18_SVT)               0.00       0.00 r
-  current_state_reg[2]/Q (DFFRQ_X2_18_SVT)                0.32       0.32 f
-  U1151/Q (CLKINV_X1_18_SVT)                              0.13       0.45 r
-  U1149/Q (CLKNAND2_X2_18_SVT)                            0.13       0.58 f
-  U786/Q (NAND2_A_NOR3_X0_18_SVT)                         1.01       1.59 r
-  U783/Q (INV_A_NOR2_X0_18_SVT)                           0.23       1.82 r
-  U782/Q (INV_A_NOR2_X0_18_SVT)                           0.33       2.15 r
-  U781/Q (INV_A_NOR3_X0_18_SVT)                           0.50       2.65 r
-  U779/Q (AOI22_X0_18_SVT)                                0.08       2.73 f
-  wl_decoded_reg[0]/D (DFFSQ_X2_18_SVT)                   0.00       2.73 f
-  data arrival time                                                  2.73
+  current_state_reg[2]/Q (DFFRQ_X2_18_SVT)                0.39       0.39 r
+  U1152/Q (CLKINV_X1_18_SVT)                              0.18       0.57 f
+  U1144/Q (NOR4_X0_18_SVT)                                2.51       3.08 r
+  U1143/Q (CLKINV_X1_18_SVT)                              0.43       3.51 f
+  U1142/Q (CLKNAND2_X2_18_SVT)                            0.63       4.14 r
+  U1141/Q (CLKNAND2_X2_18_SVT)                            0.16       4.30 f
+  U581/Q (BUF_X2_18_SVT)                                  0.15       4.46 f
+  U578/Q (BUF_X2_18_SVT)                                  0.16       4.62 f
+  U1051/Q (NOR2P3_X1_18_SVT)                              0.78       5.40 r
+  BL_S[4] (out)                                           0.00       5.40 r
+  data arrival time                                                  5.40
 
   clock clk (rise edge)                                  10.00      10.00
   clock network delay (ideal)                             0.00      10.00
-  wl_decoded_reg[0]/CK (DFFSQ_X2_18_SVT)                  0.00      10.00 r
-  library setup time                                     -0.12       9.88
-  data required time                                                 9.88
+  output external delay                                   0.00      10.00
+  data required time                                                10.00
   --------------------------------------------------------------------------
-  data required time                                                 9.88
-  data arrival time                                                 -2.73
+  data required time                                                10.00
+  data arrival time                                                 -5.40
   --------------------------------------------------------------------------
-  slack (MET)                                                        7.15
+  slack (MET)                                                        4.60
 
 
   Startpoint: current_state_reg[2]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: wl_decoded_reg[9]
-            (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: BL_S[3] (output port clocked by clk)
   Path Group: clk
   Path Type: max
 
@@ -305,33 +296,32 @@ Wire Load Model Mode: top
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   current_state_reg[2]/CK (DFFRQ_X2_18_SVT)               0.00       0.00 r
-  current_state_reg[2]/Q (DFFRQ_X2_18_SVT)                0.32       0.32 f
-  U1151/Q (CLKINV_X1_18_SVT)                              0.13       0.45 r
-  U1149/Q (CLKNAND2_X2_18_SVT)                            0.13       0.58 f
-  U786/Q (NAND2_A_NOR3_X0_18_SVT)                         1.01       1.59 r
-  U783/Q (INV_A_NOR2_X0_18_SVT)                           0.23       1.82 r
-  U782/Q (INV_A_NOR2_X0_18_SVT)                           0.33       2.15 r
-  U762/Q (INV_A_NOR3_X0_18_SVT)                           0.50       2.65 r
-  U761/Q (AOI22_X0_18_SVT)                                0.08       2.73 f
-  wl_decoded_reg[9]/D (DFFSQ_X2_18_SVT)                   0.00       2.73 f
-  data arrival time                                                  2.73
+  current_state_reg[2]/Q (DFFRQ_X2_18_SVT)                0.39       0.39 r
+  U1152/Q (CLKINV_X1_18_SVT)                              0.18       0.57 f
+  U1144/Q (NOR4_X0_18_SVT)                                2.51       3.08 r
+  U1143/Q (CLKINV_X1_18_SVT)                              0.43       3.51 f
+  U1142/Q (CLKNAND2_X2_18_SVT)                            0.63       4.14 r
+  U1141/Q (CLKNAND2_X2_18_SVT)                            0.16       4.30 f
+  U581/Q (BUF_X2_18_SVT)                                  0.15       4.46 f
+  U577/Q (BUF_X2_18_SVT)                                  0.16       4.62 f
+  U1073/Q (NOR2P3_X1_18_SVT)                              0.78       5.40 r
+  BL_S[3] (out)                                           0.00       5.40 r
+  data arrival time                                                  5.40
 
   clock clk (rise edge)                                  10.00      10.00
   clock network delay (ideal)                             0.00      10.00
-  wl_decoded_reg[9]/CK (DFFSQ_X2_18_SVT)                  0.00      10.00 r
-  library setup time                                     -0.12       9.88
-  data required time                                                 9.88
+  output external delay                                   0.00      10.00
+  data required time                                                10.00
   --------------------------------------------------------------------------
-  data required time                                                 9.88
-  data arrival time                                                 -2.73
+  data required time                                                10.00
+  data arrival time                                                 -5.40
   --------------------------------------------------------------------------
-  slack (MET)                                                        7.15
+  slack (MET)                                                        4.60
 
 
   Startpoint: current_state_reg[2]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: wl_decoded_reg[8]
-            (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: BL_S[2] (output port clocked by clk)
   Path Group: clk
   Path Type: max
 
@@ -340,27 +330,27 @@ Wire Load Model Mode: top
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   current_state_reg[2]/CK (DFFRQ_X2_18_SVT)               0.00       0.00 r
-  current_state_reg[2]/Q (DFFRQ_X2_18_SVT)                0.32       0.32 f
-  U1151/Q (CLKINV_X1_18_SVT)                              0.13       0.45 r
-  U1149/Q (CLKNAND2_X2_18_SVT)                            0.13       0.58 f
-  U786/Q (NAND2_A_NOR3_X0_18_SVT)                         1.01       1.59 r
-  U783/Q (INV_A_NOR2_X0_18_SVT)                           0.23       1.82 r
-  U782/Q (INV_A_NOR2_X0_18_SVT)                           0.33       2.15 r
-  U764/Q (INV_A_NOR3_X0_18_SVT)                           0.50       2.65 r
-  U763/Q (AOI22_X0_18_SVT)                                0.08       2.73 f
-  wl_decoded_reg[8]/D (DFFSQ_X2_18_SVT)                   0.00       2.73 f
-  data arrival time                                                  2.73
+  current_state_reg[2]/Q (DFFRQ_X2_18_SVT)                0.39       0.39 r
+  U1152/Q (CLKINV_X1_18_SVT)                              0.18       0.57 f
+  U1144/Q (NOR4_X0_18_SVT)                                2.51       3.08 r
+  U1143/Q (CLKINV_X1_18_SVT)                              0.43       3.51 f
+  U1142/Q (CLKNAND2_X2_18_SVT)                            0.63       4.14 r
+  U1141/Q (CLKNAND2_X2_18_SVT)                            0.16       4.30 f
+  U580/Q (BUF_X2_18_SVT)                                  0.15       4.46 f
+  U576/Q (BUF_X2_18_SVT)                                  0.16       4.62 f
+  U1095/Q (NOR2P3_X1_18_SVT)                              0.78       5.40 r
+  BL_S[2] (out)                                           0.00       5.40 r
+  data arrival time                                                  5.40
 
   clock clk (rise edge)                                  10.00      10.00
   clock network delay (ideal)                             0.00      10.00
-  wl_decoded_reg[8]/CK (DFFSQ_X2_18_SVT)                  0.00      10.00 r
-  library setup time                                     -0.12       9.88
-  data required time                                                 9.88
+  output external delay                                   0.00      10.00
+  data required time                                                10.00
   --------------------------------------------------------------------------
-  data required time                                                 9.88
-  data arrival time                                                 -2.73
+  data required time                                                10.00
+  data arrival time                                                 -5.40
   --------------------------------------------------------------------------
-  slack (MET)                                                        7.15
+  slack (MET)                                                        4.60
 
 
 1

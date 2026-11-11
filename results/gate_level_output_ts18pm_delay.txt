@@ -1,4 +1,4 @@
-TOOL:	xrun(64)	24.03-s004: Started on Nov 11, 2026 at 16:15:06 IST
+TOOL:	xrun(64)	24.03-s004: Started on Nov 11, 2026 at 16:24:25 IST
 xrun(64): 24.03-s004: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
 file: Control_syn.v
 	module worklib.Control:v
@@ -92,7 +92,7 @@ file: /tools/kits/tower/TS18PM_1/tsl18fs190svt_Rev_2019.09/lib/verilog/tsl18fs19
 		tb_Control
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.Control:v <0x5208d144>
+		worklib.Control:v <0x15fbf25d>
 			streams:   0, words:     0
 		worklib.tb_Control:sv <0x384c4bba>
 			streams:  22, words: 31017
@@ -136,12 +136,12 @@ file: /tools/kits/tower/TS18PM_1/tsl18fs190svt_Rev_2019.09/lib/verilog/tsl18fs19
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                   Instances  Unique
-		Modules:                 732      37
+		Modules:                 733      37
 		UDPs:                    308       3
-		Primitives:            2,043       4
-		Timing outputs:          730      35
+		Primitives:            2,044       4
+		Timing outputs:          731      35
 		Registers:               189      39
-		Scalar wires:            893       -
+		Scalar wires:            894       -
 		Expanded wires:          131       4
 		Always blocks:             1       1
 		Initial blocks:            4       4
@@ -157,4 +157,4 @@ xcelium> run
 Simulation complete via $finish(1) at time 9140 NS + 0
 ./tb_Control_gl.sv:176         $finish;
 xcelium> exit
-TOOL:	xrun(64)	24.03-s004: Exiting on Nov 11, 2026 at 16:15:06 IST  (total: 00:00:00)
+TOOL:	xrun(64)	24.03-s004: Exiting on Nov 11, 2026 at 16:24:25 IST  (total: 00:00:00)
